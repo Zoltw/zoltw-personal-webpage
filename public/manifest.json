@@ -1,0 +1,12 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "zoltw webpage",
+    "short_name": "zoltw webpage",
+    "start_url": ".",
+    "display": "browser",
+    "background_color": "#000000",
+    "description": "",
+    "icons": [
+    ]
+  }
+  
