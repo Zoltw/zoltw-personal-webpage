@@ -1,16 +1,12 @@
 import React from 'react';
 import './App.css';
 
-function App() {
+export default function App(): JSX.Element {
   return (
     <div className="App">
       <header className="AppHeader">
-        <p>
-          Hello on my webpage.
-        </p>
+        <p>Hello on my webpage guys.</p>
       </header>
     </div>
   );
 }
-
-export default App;
