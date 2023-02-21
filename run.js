@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable */
 const { build } = require('esbuild');
 const chokidar = require('chokidar');
 const { createServer } = require('http-server');
@@ -34,7 +34,7 @@ function runBuild() {
     // sourcemap: 'development' === env
   }).catch((err) => {
     console.log(err);
-    // process.exit(1);
+    process.exit(1);
   });
 }
 
