@@ -20,11 +20,12 @@ function runServer() {
 }
 
 function runBuild() {
-  build({
-    // stdio: 'inherit',
+  require('esbuild').build({
     minify: true,
     entryPoints: ['./src/index.tsx'],
-    outfile: './public/dist/bundle.js',
+    loader: {'.glb': 'file', '.svg': 'file', '.png': 'file'},
+    outdir: './public/dist',
+    // outsrc: './public/dist/bundle.js',
     // minify: 'production' === env,
     bundle: true,
     format: 'esm',
@@ -47,7 +48,7 @@ chokidar.watch('./src/**', {
   runServer();
   runBuild();
   console.log('\n=====================================');
-  console.log('Esbuild is waiting for changes...');
+  console.log('esbuild is waiting for changes...');
   console.log('======================================\n');
 });
 

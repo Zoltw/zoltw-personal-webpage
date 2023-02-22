@@ -105,6 +105,9 @@
       ],
       "@resources/*": [
         "./src/resources/*"
+      ],
+      "@view/*": [
+        "./src/view/*"
       ]
     }
   },
