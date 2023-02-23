@@ -48,17 +48,11 @@ export default function MichelAngelos(): JSX.Element {
       {/* Car */}
       <Model />
 
-      {/* Floor */}
-      <mesh rotation={[-(angleToRadians(90)), 0, 0]} receiveShadow>
-        <planeGeometry args={[20, 20]} />
-        <meshStandardMaterial color="#1ea3d8" />
-      </mesh>
-
       {/* Ambient light */}
-      <ambientLight args={['#ffffff', 0.25]} />
+      {/* <ambientLight args={['#ffffff', 0.25]} /> */}
 
       {/* Spotlight light */}
-      <spotLight args={['#ffffff', 1.5, 7, angleToRadians(45), 0.4]} position={[-3, 1, 0]} castShadow />
+      {/* <spotLight args={['#ffffff', 1.5, 7, angleToRadians(45), 0.4]} position={[-3, 1, 0]} castShadow /> */}
 
       {/* Environmnet */}
       <Environment background>
@@ -71,4 +65,4 @@ export default function MichelAngelos(): JSX.Element {
   );
 }
 
-export const angleToRadians = (angleInDeg: number) => (Math.PI / 180) * angleInDeg;
+const angleToRadians = (angleInDeg: number) => (Math.PI / 180) * angleInDeg;
