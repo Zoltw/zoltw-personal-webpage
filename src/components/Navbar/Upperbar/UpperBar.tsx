@@ -18,4 +18,10 @@ export default class UpperBar extends React.Component<UpperBarProps, UpperBarSta
       active: UpperBar.staticActive,
     };
   }
+
+  render(): JSX.Element {
+    return (
+      <div className={`UpperBar ${this.props.className} ${this.state.active ? 'active' : ''}`}/>
+    );
+  }
 }

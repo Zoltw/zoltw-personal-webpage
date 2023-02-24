@@ -5,7 +5,7 @@
   "main": "index.tsx",
   "scripts": {
     "build": "esbuild src/index.tsx --bundle --minify --sourcemap --outfile=public/dist/bundle.js",
-    "start": "NODE_ENV=development node run.js"
+    "start": "NODE_ENV=development node run.mjs"
   },
   "keywords": [],
   "author": "zoltw",
