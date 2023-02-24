@@ -14,5 +14,6 @@
 }
 
 #three-canvas-container {
-  height: 100vh !important;
+  height: 50vh !important;
+  width: 50vh !important;
 }

@@ -12,9 +12,7 @@ export default function App(): JSX.Element {
     <div className="App">
       <header className="AppHeader">
         <Canvas id="three-canvas-container" shadows>
-          <Suspense fallback={<></>}>
-            <MichelAngelos />
-          </Suspense>
+          <MichelAngelos />
         </Canvas>
         <p>Hello on my webpage guys.</p>
       </header>
