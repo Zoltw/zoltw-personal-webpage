@@ -1,9 +1,14 @@
+body {
+  background-color: #131313;
+  margin: 0;
+  /* overflow-x: hidden; */
+}
+
 .App {
     text-align: center;
   }
 
 .AppHeader {
-  background-color: #131313;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,11 +16,46 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  transform: translate3d(0px, 0px, 0px) skewY(0deg);
 }
 
 #three-canvas-container {
   height: 50vh !important;
   width: 50vh !important;
   /* opacity: 0.2; */
+  animation: content-animation 0.5s linear 0s 1;
+}
+
+
+.BackgroundNoise {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: .9;
+  visibility: visible;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+
+@keyframes content-animation {
+    0% { opacity: 0; transform: translate(0, 30px) }
+    100% { opacity: 1; transform: translate(0, 0) }
 }

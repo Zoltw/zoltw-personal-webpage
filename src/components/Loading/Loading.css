@@ -4,11 +4,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
 img {
-    animation: spin infinite 1.5s linear;
+    animation: hide 1s linear 1s; 
+}
 
+.HideImg {
+    animation: spin infinite 2s linear;
 }
 
 @keyframes spin {
@@ -16,6 +19,16 @@ img {
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+      transform: rotate(400deg);
     }
 }
+
+@keyframes hide {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+}
+
