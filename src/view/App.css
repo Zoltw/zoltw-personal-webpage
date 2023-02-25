@@ -1,10 +1,9 @@
 .App {
     text-align: center;
-    overflow: auto;
   }
 
 .AppHeader {
-  background-color: #282c34;
+  background-color: #131313;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,9 +11,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  transform: translate3d(0px, 0px, 0px) skewY(0deg);
 }
 
 #three-canvas-container {
   height: 50vh !important;
   width: 50vh !important;
+  /* opacity: 0.2; */
 }

@@ -26,16 +26,16 @@ function runBuild() {
       '.glb': 'file',
       '.svg': 'text',
       '.png': 'file',
+      '.otf': 'file',
     },
     outdir: './public/dist',
-    // outsrc: './public/dist/bundle.js',
     // minify: 'production' === env,
     bundle: true,
     format: 'esm',
     define: {
       'process.env.NODE_ENV': `'${env}'`,
     },
-    // sourcemap: 'development' === env
+    // sourcemap: 'development' === env,
   }).catch((err) => {
     console.log(err);
     process.exit(1);

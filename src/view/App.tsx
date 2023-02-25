@@ -15,7 +15,7 @@ export default function App(): JSX.Element {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 2000);
   }, []);
 
   return (
@@ -26,7 +26,7 @@ export default function App(): JSX.Element {
           <Loading /> :
 
           <header className="AppHeader">
-            <Canvas id="three-canvas-container" shadows>
+            <Canvas id="three-canvas-container" className="canvas" shadows>
               <MichelAngelos />
             </Canvas>
             <p>Hello on my webpage guys.</p>

@@ -103,9 +103,6 @@
       "@components/*": [
         "./src/components/*"
       ],
-      "@resources/*": [
-        "./src/resources/*"
-      ],
       "@view/*": [
         "./src/view/*"
       ]

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import React, { useRef } from 'react';
+import React from 'react';
 import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
 
@@ -14,7 +14,7 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model(props: JSX.IntrinsicElements['group']): JSX.Element {
-  const { nodes, materials } = useGLTF('assets/michel_angelos.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF('assets/models/michel_angelos.glb') as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <group position={[2.23, -22.65, 0]} rotation={[-Math.PI / 2, 0, 0]}>
@@ -29,4 +29,4 @@ export default function Model(props: JSX.IntrinsicElements['group']): JSX.Elemen
   );
 }
 
-useGLTF.preload('assets/michel_angelos.glb');
+useGLTF.preload('assets/models/michel_angelos.glb');

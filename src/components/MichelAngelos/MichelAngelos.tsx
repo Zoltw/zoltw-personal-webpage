@@ -5,6 +5,7 @@ import Model from './Model';
 
 
 export default function MichelAngelos(): JSX.Element {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const animationRef = useRef<THREE.Mesh>(null!);
   useFrame((state, delta) => (animationRef.current.rotation.y += 0.01));
 
