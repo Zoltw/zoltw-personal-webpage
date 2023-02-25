@@ -1,19 +1,7 @@
-
 import { build } from 'esbuild';
 import chokidar from 'chokidar';
 import { createServer } from 'http-server';
-import { readdirSync } from 'fs';
-import { join } from 'path';
 const env = process.env.NODE_ENV;
-const srcdir = './src';
-const entryPointFilter = (file) => {
-  if (!file.isFile()) return false;
-};
-
-const entryPoints = readdirSync(srcdir, { withFileTypes: true })
-  .filter(entryPointFilter)
-  .map((file) => join(srcdir, file.name));
-
 
 function runServer() {
   const server = createServer({
@@ -33,7 +21,7 @@ function runServer() {
 function runBuild() {
   build({
     minify: true,
-    entryPoints,
+    entryPoints: ['./src/index.tsx'],
     loader: {
       '.glb': 'file',
       '.svg': 'text',
