@@ -23,15 +23,25 @@ export default function App(): JSX.Element {
       <div className="BackgroundNoise"></div>
       {
         loading ?
-
           <Loading /> :
-
-          <header className="AppHeader">
-            <Canvas id="three-canvas-container" className="canvas" shadows>
-              <MichelAngelos />
-            </Canvas>
-            <p>Hello on my webpage guys.</p>
-          </header>
+          // Main wrap
+          <div className="MainWrap">
+            {/* Header */}
+            <header id="header">
+              <UpperBar className="UpperBar"/>
+              <BottomBar />
+            </header>
+            {/* Main content*/}
+            <div className="MainPage">
+              <div className="WelocomeSection">
+                <span className="HelloDescription">He_<br />llo.</span>
+                <Canvas id="three-canvas-container" shadows>
+                  <MichelAngelos />
+                </Canvas>
+                <span className="ImDescription">I'm<br />Filip</span>
+              </div>
+            </div>
+          </div>
       }
     </div>
   );

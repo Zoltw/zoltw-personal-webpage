@@ -4,11 +4,7 @@ body {
   /* overflow-x: hidden; */
 }
 
-.App {
-    text-align: center;
-  }
-
-.AppHeader {
+.MainWrap {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,6 +21,15 @@ body {
   animation: content-animation 0.5s linear 0s 1;
 }
 
+#header {
+  position: fixed;
+  top: 0px;
+  left: 28px;
+  right: 28px;
+  z-index: 11;
+  height: 55px;
+}
+
 
 .BackgroundNoise {
   position: fixed;
@@ -34,11 +39,21 @@ body {
   bottom: -50%;
   width: 200%;
   height: 200vh;
-  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background: transparent url('../../public/assets/img/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .2s infinite;
   opacity: .9;
   visibility: visible;
+}
+
+.WelocomeSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.UpperBar {
+  opacity: 1;
+  font-size: calc(0.25rem + 1vmin);
 }
 
 @keyframes bg-animation {
@@ -56,6 +71,6 @@ body {
 }
 
 @keyframes content-animation {
-    0% { opacity: 0; transform: translate(0, 30px) }
+    0% { opacity: 0; transform: translate(0, 20px) }
     100% { opacity: 1; transform: translate(0, 0) }
 }

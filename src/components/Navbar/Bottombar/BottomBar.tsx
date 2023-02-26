@@ -16,4 +16,10 @@ export default class BottomBar extends React.Component<BottomBarProps, BottomBar
       active: false,
     };
   }
+
+  render(): JSX.Element {
+    return (
+      <div className={`BottomBar ${this.props.className} ${this.state.active ? 'active' : ''}`}/>
+    );
+  }
 }
