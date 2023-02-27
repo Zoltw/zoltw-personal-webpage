@@ -24,10 +24,12 @@ export default class UpperBar extends React.Component<UpperBarProps, UpperBarSta
       <div className={`UpperBar ${this.props.className} ${this.state.active ? 'active' : ''}`}>
         <nav className="UpperBarContent">
           <div className="title">
-            <a href="#home">
-              <span className="title__name">Filip Zolyniak</span>
-            </a>
-            <span>Software Engineer</span>
+            <div className="title-container">
+              <a href="#home">
+                <span className="title-name">Filip Zolyniak</span>
+              </a>
+              <span>Software Engineer</span>
+            </div>
             <div className="icons">
               <a href="https://www.linkedin.com/in/filip-żołyniak-807a02267/">
                 <img src="assets/img/linkedin.svg" alt="Linkedin" />

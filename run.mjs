@@ -27,6 +27,7 @@ function runBuild() {
       '.svg': 'text',
       '.png': 'file',
       '.otf': 'file',
+      '.ttf': 'file',
     },
     outdir: './public/dist',
     // minify: 'production' === env,

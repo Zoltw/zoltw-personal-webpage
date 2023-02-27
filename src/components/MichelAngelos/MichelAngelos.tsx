@@ -17,7 +17,7 @@ export default function MichelAngelos(): JSX.Element {
         <Model position={[0, 11, 0]}/>
       </mesh>
 
-      <ambientLight args={['#ffffff', 0.1]} />
+      <ambientLight args={['#ffffff', 0.5]} />
 
       <spotLight args={['#ffffff', 1.5, 7, angleToRadians(45), 0.4]} position={[-3, 1, 0]} castShadow />
     </>

@@ -1,5 +1,11 @@
+@font-face {
+    font-family: "HomemadeApple";
+    src: url("../../../../resources/fonts/HomemadeApple-Regular.ttf");
+  }
+
 .UpperBarContent {
-    padding: 1.625rem 0 1.5rem 0;
+    padding-top: calc(1rem + 1vmin);
+    padding-bottom: calc(0.8rem + 1vmin);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -34,6 +40,10 @@ ul {
     align-items: center;
 }
 
+.title-name {
+    font-family: "HomemadeApple";
+}
+
 .menuAnimation {
     display: inline-block;
     position: relative;
@@ -55,4 +65,11 @@ ul {
 .menuAnimation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+@media screen and (max-width: 620px) {
+    .title-container {
+        display: none;
+
+    }
 }
