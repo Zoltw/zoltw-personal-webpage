@@ -1,7 +1,7 @@
 body {
   background-color: #131313;
   margin: 0;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 .MainWrap {
@@ -47,6 +47,13 @@ body {
 }
 
 .WelocomeSection {
+  /* display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.25rem; */
+   margin-top: 6rem;
+}
+
+.Description {
   display: flex;
   justify-content: space-between;
   letter-spacing: 0.25rem;

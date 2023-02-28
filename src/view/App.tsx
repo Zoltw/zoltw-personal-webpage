@@ -1,6 +1,8 @@
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
+import { TypeAnimation } from 'react-type-animation';
+
 import './App.css';
 import UpperBar from '@components/Navbar/Upperbar/UpperBar';
 import BottomBar from '@components/Navbar/Bottombar/BottomBar';
@@ -34,14 +36,33 @@ export default function App(): JSX.Element {
             {/* Main content*/}
             <div className="MainPage">
               <div className="WelocomeSection">
-                <span className="HelloDescription">He_<br />llo.</span>
+                <div className="Description">
+                  <span className="HelloDescription">Hello.</span>
+                  <TypeAnimation
+                    className="ImDescription"
+                    sequence={[
+                      2000,
+                      'I\'m Filip',
+                      1000,
+                      'I\'m Developer',
+                      2000,
+                      'I\'m Designer',
+                    ]}
+                    wrapper="div"
+                    cursor={true}
+                    repeat={Infinity}
+                    style={{ fontSize: 'calc(90px + 2vmin)' }}
+                  />
+                </div>
                 <Canvas id="three-canvas-container" shadows>
                   <MichelAngelos />
                 </Canvas>
-                <span className="ImDescription">I'm<br />Filip</span>
               </div>
             </div>
             <main>
+              <div>
+                <img src="" alt="" />
+              </div>
               <section className="techStack">
                 <h3>Most often i work with</h3>
                 <ul>
@@ -53,8 +74,12 @@ export default function App(): JSX.Element {
                 <ul>
                 </ul>
               </section>
-              <section className="about"></section>
-              <section className="contact"></section>
+              <section className="about">
+                <h3>About me</h3>
+              </section>
+              <section className="contact">
+                <h3>Let's connect</h3>
+              </section>
             </main>
             <footer></footer>
           </div>

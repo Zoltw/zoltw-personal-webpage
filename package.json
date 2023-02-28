@@ -7,16 +7,25 @@
     "build": "esbuild src/index.tsx --bundle --minify --sourcemap --outfile=public/dist/bundle.js",
     "start": "NODE_ENV=development node run.mjs"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zoltw/zoltw-personal-webpage.git"
+  },
   "keywords": [],
-  "author": "zoltw",
+  "author": "",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zoltw/zoltw-personal-webpage/issues"
+  },
+  "homepage": "https://github.com/Zoltw/zoltw-personal-webpage#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.34.0",
     "eslint-config-google": "^0.14.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-type-animation": "^2.1.2"
   },
   "devDependencies": {
     "@react-three/drei": "^9.56.25",
