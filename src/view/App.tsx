@@ -41,6 +41,22 @@ export default function App(): JSX.Element {
                 <span className="ImDescription">I'm<br />Filip</span>
               </div>
             </div>
+            <main>
+              <section className="techStack">
+                <h3>Most often i work with</h3>
+                <ul>
+                </ul>
+                <h3>Familiar with/worked with</h3>
+                <ul>
+                </ul>
+                <h3>During learning/wants to learn</h3>
+                <ul>
+                </ul>
+              </section>
+              <section className="about"></section>
+              <section className="contact"></section>
+            </main>
+            <footer></footer>
           </div>
       }
     </div>

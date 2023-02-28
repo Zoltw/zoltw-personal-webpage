@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(90px + 2vmin);
   color: white;
 }
 
@@ -49,6 +49,7 @@ body {
 .WelocomeSection {
   display: flex;
   justify-content: space-between;
+  letter-spacing: 0.25rem;
 }
 
 .UpperBar {

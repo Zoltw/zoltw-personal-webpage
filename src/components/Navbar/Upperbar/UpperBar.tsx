@@ -31,13 +31,13 @@ export default class UpperBar extends React.Component<UpperBarProps, UpperBarSta
               <span>Software Engineer</span>
             </div>
             <div className="icons">
-              <a href="https://www.linkedin.com/in/filip-żołyniak-807a02267/">
-                <img src="assets/img/linkedin.svg" alt="Linkedin" />
-              </a>
-              <a href="https://github.com/Zoltw">
+              <a href="https://github.com/Zoltw" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/square-github.svg" alt="Github" />
               </a>
-              <a href="">
+              <a href="https://www.linkedin.com/in/filip-żołyniak-807a02267/" target="_blank" rel="noopener noreferrer">
+                <img src="assets/img/linkedin.svg" alt="Linkedin" />
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/file-solid.svg" alt="Resume" />
               </a>
             </div>
