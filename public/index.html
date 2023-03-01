@@ -11,12 +11,15 @@
     />
     <link rel="apple-touch-icon" href="assets/img/favicon192.png" />
     <link rel="manifest" href="manifest.json" />
-    <title>Filip Zolyniak 💻</title>
+    <title>Filip Zolyniak</title>
     <link rel="stylesheet" href="dist/index.css" />
     <script src="dist/index.js" defer></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="bg-noise" style="position:fixed; inset: -30%; width: 200%; height: 200vh; 
+    background: transparent url('./assets/img/noise-transparent.png') repeat 0 0; background-repeat: repeat; animation: bg-animation .2s infinite;
+    opacity: .9; visibility: visible;"></div>
     <div id="root"></div>
   </body>
 </html>

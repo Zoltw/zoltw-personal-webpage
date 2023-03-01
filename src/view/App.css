@@ -4,7 +4,11 @@ body {
   overflow-x: hidden;
 }
 
-.MainWrap {
+body::-webkit-scrollbar{
+  display: none;
+}
+
+#MainWrap {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,27 +34,9 @@ body {
   height: 55px;
 }
 
-
-.BackgroundNoise {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent url('../../public/assets/img/noise-transparent.png') repeat 0 0;
-  background-repeat: repeat;
-  animation: bg-animation .2s infinite;
-  opacity: .9;
-  visibility: visible;
-}
-
-.WelocomeSection {
-  /* display: flex;
-  justify-content: space-between;
-  letter-spacing: 0.25rem; */
-   margin-top: 6rem;
+.MainPage {
+   display: flex;
+   margin-top: 10rem;
 }
 
 .Description {
@@ -84,6 +70,27 @@ body {
 
 }
 
+p {
+  font-size: 1rem;
+  width: 35rem;
+}
+
+.line-page {
+  display: flex;
+  width: 95%;
+  border-bottom: 1px solid rgba(245,238,230,.5);
+  justify-content: center;
+  margin: 2rem 0 15rem 0;
+  margin-bottom: calc(0.25rem + 5%);
+  margin-top: calc(0.25rem + 5%);
+  cursor: pointer;
+}
+
+.down-arrow {
+  cursor: pointer;
+  animation: arrow-animation 1s linear 0s infinite;
+}
+
 @keyframes bg-animation {
     0% { transform: translate(0,0) }
     10% { transform: translate(-5%,-5%) }
@@ -102,6 +109,13 @@ body {
     0% { opacity: 0; transform: translate(0, 20px) }
     100% { opacity: 1; transform: translate(0, 0) }
 }
+
+@keyframes arrow-animation {
+    0% { transform: translate(0,0) }
+    50% { transform: translate(0,10px) }
+    100% { transform: translate(0,0) }
+}
+  
 
 @media screen and (max-width: 920px) {
   .most-often-grid {

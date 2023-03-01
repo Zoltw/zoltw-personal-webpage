@@ -12,16 +12,16 @@ export default class BottomBar extends React.Component<BottomBarProps> {
         <nav className="UpperBarContent">
           <div className="title">
             <div className="title-container">
-              <a href="#home">filip@zoltw.com</a>
+              <a className="menuAnimation" href="mailto:filip@zoltw.com?">filip@zoltw.com</a>
             </div>
           </div>
           <div className="menu">
             <ul>
               <li>
-                <span className="menuAnimation">© 2023 zoltw</span>
+                <span >© 2023 zoltw</span>
               </li>
-              <li>
-                <a className="menuAnimation" href="#contact">credits</a>
+              <li >
+                <a className="menuAnimation" href="#t">credits</a>
               </li>
             </ul>
           </div>
