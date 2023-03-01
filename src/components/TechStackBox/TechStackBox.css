@@ -1,0 +1,21 @@
+.box-container {
+    width: 154px;
+    height: 110px;
+    left: calc(50% - 614px);
+    top: calc(50% - 294.5px);
+    background: rgba(255,255,255,.05);
+    border: 0.5px solid #FFFFFF;
+    box-shadow: 1px 3px 4px #ffffff40;
+    border-radius: 2px;
+    font-size: calc(0.15rem + 1vmin);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.box-image {
+    height: 70px;
+    width: 70px;
+}
