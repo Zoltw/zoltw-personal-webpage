@@ -8,6 +8,7 @@ import UpperBar from '@components/Navbar/Upperbar/UpperBar';
 import BottomBar from '@components/Navbar/Bottombar/BottomBar';
 import MichelAngelos from '@components/MichelAngelos/MichelAngelos';
 import Loading from '@components/Loading/Loading';
+import FormComponent from '@components/FormComponent/FormComponent';
 import { TechStackBox } from '@components/TechStackBox/TechStackBox';
 
 
@@ -32,7 +33,6 @@ export default function App(): JSX.Element {
             {/* Header */}
             <header id="header">
               <UpperBar className="UpperBar"/>
-              <BottomBar />
             </header>
             {/* Main content*/}
             <div className="MainPage">
@@ -88,12 +88,12 @@ export default function App(): JSX.Element {
                   <TechStackBox src={'assets/img/techStack/postgresql.svg'} text={'postgreSQL'}/>
                   <TechStackBox src={'assets/img/techStack/mysql-logo.svg'} text={'mySQL'}/>
                   <TechStackBox src={'assets/img/techStack/webpack.svg'} text={'webpack'}/>
-                  <TechStackBox src={'assets/img/techStack/apple-logo.svg'} text={'esbuild'}/>
+                  <TechStackBox src={'assets/img/techStack/esbuild.svg'} text={'esbuild'}/>
                   <TechStackBox src={'assets/img/techStack/arduino.svg'} text={'embedded'}/>
                   <TechStackBox src={'assets/img/techStack/adobe-photoshop.svg'} text={'photoshop'}/>
                   <TechStackBox src={'assets/img/techStack/sass.svg'} text={'SCSS'}/>
                 </ul>
-                <h3 className="tech-title">During learning/wants to learn</h3>
+                <h3 className="tech-title">During learning/want to learn</h3>
                 <ul className="familiar-learn-grid">
                   <TechStackBox src={'assets/img/techStack/tailwind-css.svg'} text={'tailwindCSS'}/>
                   <TechStackBox src={'assets/img/techStack/next-js.svg'} text={'next.js'}/>
@@ -107,9 +107,12 @@ export default function App(): JSX.Element {
               </section>
               <section className="contact">
                 <h3>Let's connect</h3>
+                <FormComponent />
               </section>
             </main>
-            <footer></footer>
+            <footer>
+              <BottomBar />
+            </footer>
           </div>
       }
     </div>

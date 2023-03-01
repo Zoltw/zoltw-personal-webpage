@@ -5,21 +5,28 @@ export interface BottomBarProps {
   className?: string;
 }
 
-export interface BottomBarState {
-  active: boolean;
-}
-
-export default class BottomBar extends React.Component<BottomBarProps, BottomBarState> {
-  constructor(props: BottomBarProps) {
-    super(props);
-    this.state = {
-      active: false,
-    };
-  }
-
+export default class BottomBar extends React.Component<BottomBarProps> {
   render(): JSX.Element {
     return (
-      <div className={`BottomBar ${this.props.className} ${this.state.active ? 'active' : ''}`}/>
+      <div className={`UpperBar ${this.props.className}`}>
+        <nav className="UpperBarContent">
+          <div className="title">
+            <div className="title-container">
+              <a href="#home">filip@zoltw.com</a>
+            </div>
+          </div>
+          <div className="menu">
+            <ul>
+              <li>
+                <span className="menuAnimation">© 2023 zoltw</span>
+              </li>
+              <li>
+                <a className="menuAnimation" href="#contact">credits</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     );
   }
 }
