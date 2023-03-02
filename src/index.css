@@ -21,3 +21,7 @@ code {
 * {
   text-rendering: optimizeLegibility;
 }
+
+::-webkit-scrollbar{
+  width: 0;
+}

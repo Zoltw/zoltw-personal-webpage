@@ -19,10 +19,13 @@ body::-webkit-scrollbar{
 }
 
 #three-canvas-container {
-  height: 50vh !important;
-  width: 50vh !important;
+  height: calc(60vh + 5vmin)!important;
+  width: calc(50vh + 5vmin)!important;
   /* opacity: 0.2; */
   animation: content-animation 0.5s linear 0s 1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #header {
@@ -36,13 +39,22 @@ body::-webkit-scrollbar{
 
 .MainPage {
    display: flex;
-   margin-top: 10rem;
+   justify-content: center;
+   width: 90%;
+   height: 90%;
+   margin-top: 8rem;
+   position: relative;
 }
 
 .Description {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   letter-spacing: 0.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -50%;
+  z-index: 10;
 }
 
 .UpperBar {
@@ -70,6 +82,10 @@ body::-webkit-scrollbar{
 
 }
 
+.ImDescription {
+  width: 64%;
+}
+
 p {
   font-size: 1rem;
   width: 35rem;
@@ -89,6 +105,16 @@ p {
 .down-arrow {
   cursor: pointer;
   animation: arrow-animation 1s linear 0s infinite;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: #fff;
+
 }
 
 @keyframes bg-animation {

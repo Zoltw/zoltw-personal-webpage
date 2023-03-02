@@ -10,10 +10,13 @@ import MichelAngelos from '@components/MichelAngelos/MichelAngelos';
 import Loading from '@components/Loading/Loading';
 import TextArea from '@components/TextArea/TextArea';
 import { TechStackBox } from '@components/TechStackBox/TechStackBox';
+import useReadingProgress from '@components/ProgressScroll/ProgressScroll';
 
 
 export default function App(): JSX.Element {
   const [loading, setLoading] = useState(true);
+  const completion = useReadingProgress();
+  console.log(completion);
 
   useEffect(() => {
     setLoading(true);
@@ -29,6 +32,7 @@ export default function App(): JSX.Element {
           <Loading /> :
           // Main wrap
           <div id="MainWrap">
+            <div className="progress-bar" id="progress-bar"></div>
             {/* Header */}
             <header id="header">
               <UpperBar className="UpperBar"/>
@@ -37,28 +41,28 @@ export default function App(): JSX.Element {
             <div className="MainPage">
               <div className="Description">
                 <span className="HelloDescription">Hello.</span>
+                <TypeAnimation
+                  className="ImDescription"
+                  sequence={[
+                    2000,
+                    'I\'m Filip',
+                    1500,
+                    'I\'m Developer',
+                    1500,
+                    'I\'m Designer',
+                    1500,
+                    'I\'m Enthusiast',
+                  ]}
+                  wrapper="div"
+                  cursor={true}
+                  repeat={Infinity}
+                  style={{ fontSize: 'calc(90px + 2vmin)' }}
+                />
               </div>
               <Canvas id="three-canvas-container" shadows>
                 <MichelAngelos />
               </Canvas>
             </div>
-            <TypeAnimation
-              className="ImDescription"
-              sequence={[
-                2000,
-                'I\'m Filip',
-                1500,
-                'I\'m Developer',
-                1500,
-                'I\'m Designer',
-                1500,
-                'I\'m Enthusiast',
-              ]}
-              wrapper="div"
-              cursor={true}
-              repeat={Infinity}
-              style={{ fontSize: 'calc(90px + 2vmin)' }}
-            />
             <div className="line-page">
               <a href="#a">
                 <img className="down-arrow" src="assets/img/arrow-down.svg" alt="" />
