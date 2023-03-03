@@ -8,8 +8,8 @@ export interface BottomBarProps {
 export default class BottomBar extends React.Component<BottomBarProps> {
   render(): JSX.Element {
     return (
-      <div className={`UpperBar ${this.props.className}`}>
-        <nav className="UpperBarContent">
+      <div className={`BottomBar ${this.props.className}`}>
+        <nav className="BottomBarContent">
           <div className="title">
             <div className="title-container">
               <a className="menuAnimation" href="mailto:filip@zoltw.com?">filip@zoltw.com</a>

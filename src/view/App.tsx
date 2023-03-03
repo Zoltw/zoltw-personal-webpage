@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
@@ -11,12 +11,28 @@ import Loading from '@components/Loading/Loading';
 import TextArea from '@components/TextArea/TextArea';
 import { TechStackBox } from '@components/TechStackBox/TechStackBox';
 import useReadingProgress from '@components/ProgressScroll/ProgressScroll';
+import ContainerBox from '@components/ContainerBox/ContainerBox';
+import Input from '@components/Input/Input';
+import Textarea from '@components/TextArea/TextArea';
+import emailjs from '@emailjs/browser';
 
 
 export default function App(): JSX.Element {
   const [loading, setLoading] = useState(true);
+  const [titleValid, setTitleValid] = useState(false);
+  const [messageValid, setMessageValid] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
   const completion = useReadingProgress();
-  console.log(completion);
+  const title = useRef(null);
+  const email = useRef(null);
+  const message = useRef(null);
+  // console.log(completion);
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+    // emailjs.sendForm('service_1x9x9x9', 'template_1x9x9x9', e.target, 'user_1x9x9x9');
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -25,8 +41,17 @@ export default function App(): JSX.Element {
     }, 2000);
   }, []);
 
+  useEffect(() => {
+    setIsFormValid(titleValid && messageValid && emailValid);
+  }, [
+    titleValid,
+    messageValid,
+    emailValid,
+  ]);
+
   return (
     <div>
+      <div className="bg-noise"></div>
       {
         loading ?
           <Loading /> :
@@ -35,7 +60,7 @@ export default function App(): JSX.Element {
             <div className="progress-bar" id="progress-bar"></div>
             {/* Header */}
             <header id="header">
-              <UpperBar className="UpperBar"/>
+              <UpperBar className={'UpperBar'}/>
             </header>
             {/* Main content*/}
             <div className="MainPage">
@@ -112,6 +137,35 @@ export default function App(): JSX.Element {
             </section>
             <section className="contact">
               <h3>Let's connect</h3>
+              <ContainerBox width={'100%'}>
+                <form className={'form'} onSubmit={sendEmail}>
+                  <Input
+                    useRef={email}
+                    correctValue={setEmailValid}
+                    type={'email'}
+                    name={'email'}
+                    placeholder={'Email'}
+                    required
+                    className={'email'}
+                  />
+                  <Input
+                    useRef={title}
+                    correctValue={setTitleValid}
+                    type={'text'}
+                    name={'title'}
+                    placeholder={'Title'}
+                    required
+                    className={'input'}
+                  />
+                  <Textarea
+                    useRef={message}
+                    correctValue={setMessageValid}
+                    name={'textSupport'}
+                    placeholder={'Your message...'}
+                    className={'textElement'}
+                  />
+                </form>
+              </ContainerBox>
             </section>
             <footer>
               <BottomBar />
