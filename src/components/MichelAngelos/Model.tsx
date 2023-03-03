@@ -18,7 +18,7 @@ export default function Model(props: JSX.IntrinsicElements['group']): JSX.Elemen
   return (
     <group {...props} dispose={null}>
       <group position={[2.23, -22.65, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
+        <group rotation={[Math.PI / 2, 14, 0]}>
           <group position={[0, 16.79, 0.13]} rotation={[-Math.PI / 2, 0, 0]} scale={126.29}>
             <mesh geometry={nodes.meshNode_Material_u1_v1_0.geometry} material={materials.Material_u1_v1} />
             <mesh geometry={nodes.meshNode_Material_u1_v1_0_1.geometry} material={materials.Material_u1_v1} />

@@ -62,8 +62,6 @@ export default function App(): JSX.Element {
               <Canvas id="three-canvas-container" shadows>
                 <MichelAngelos />
               </Canvas>
-            </div>
-            <div className="line-page">
               <a href="#a">
                 <img className="down-arrow" src="assets/img/arrow-down.svg" alt="" />
               </a>
@@ -82,28 +80,29 @@ export default function App(): JSX.Element {
                 <TechStackBox src={'assets/img/techStack/github.svg'} text={'github'}/>
                 <TechStackBox src={'assets/img/techStack/figma.svg'} text={'figma'}/>
                 <TechStackBox src={'assets/img/techStack/docker.svg'} text={'docker'}/>
-                <TechStackBox src={'assets/img/techStack/apple-logo.svg'} text={'macOS'}/>
+                <TechStackBox src={'assets/img/techStack/fcpx.svg'} text={'final cut pro'}/>
               </ul>
               <h3 className="tech-title">Familiar/worked with</h3>
-              <ul className="familiar-learn-grid">
+              <ul className="most-often-grid">
                 <TechStackBox src={'assets/img/techStack/python.svg'} text={'python'}/>
                 <TechStackBox src={'assets/img/techStack/php-logo.svg'} text={'php'}/>
                 <TechStackBox src={'assets/img/techStack/threejs-logo.svg'} text={'three.js'}/>
                 <TechStackBox src={'assets/img/techStack/postgresql.svg'} text={'postgreSQL'}/>
                 <TechStackBox src={'assets/img/techStack/mysql-logo.svg'} text={'mySQL'}/>
+                <TechStackBox src={'assets/img/techStack/golang.svg'} text={'go'}/>
                 <TechStackBox src={'assets/img/techStack/webpack.svg'} text={'webpack'}/>
                 <TechStackBox src={'assets/img/techStack/esbuild.svg'} text={'esbuild'}/>
                 <TechStackBox src={'assets/img/techStack/arduino.svg'} text={'embedded'}/>
                 <TechStackBox src={'assets/img/techStack/adobe-photoshop.svg'} text={'photoshop'}/>
                 <TechStackBox src={'assets/img/techStack/sass.svg'} text={'SCSS'}/>
+                <TechStackBox src={'assets/img/techStack/tensorflow.svg'} text={'tensorflow'}/>
               </ul>
               <h3 className="tech-title">During learning/want to learn</h3>
-              <ul className="familiar-learn-grid">
+              <ul className="learn-grid">
                 <TechStackBox src={'assets/img/techStack/tailwind-css.svg'} text={'tailwindCSS'}/>
                 <TechStackBox src={'assets/img/techStack/next-js.svg'} text={'next.js'}/>
                 <TechStackBox src={'assets/img/techStack/nodejs.svg'} text={'node.js'}/>
                 <TechStackBox src={'assets/img/techStack/express-js.svg'} text={'express.js'}/>
-                <TechStackBox src={'assets/img/techStack/golang.svg'} text={'go'}/>
               </ul>
             </section>
             <section className="about">

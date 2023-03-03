@@ -19,11 +19,9 @@ body::-webkit-scrollbar{
 }
 
 #three-canvas-container {
-  height: calc(60vh + 5vmin)!important;
-  width: calc(50vh + 5vmin)!important;
-  /* opacity: 0.2; */
+  height: calc(100vh + 5vmin)!important;
   animation: content-animation 0.5s linear 0s 1;
-  position: absolute;
+  
   top: 0;
   left: 0;
 }
@@ -40,10 +38,10 @@ body::-webkit-scrollbar{
 .MainPage {
    display: flex;
    justify-content: center;
-   width: 90%;
-   height: 90%;
-   margin-top: 8rem;
+   width: 100%;
+   height: 100%;
    position: relative;
+   margin-bottom: 10rem;
 }
 
 .Description {
@@ -55,6 +53,8 @@ body::-webkit-scrollbar{
   left: 0;
   right: -50%;
   z-index: 10;
+  margin-top: 8rem;
+  margin-left: 2rem;
 }
 
 .UpperBar {
@@ -75,9 +75,9 @@ body::-webkit-scrollbar{
 
 }
 
-.familiar-learn-grid {
+.learn-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
 
 }
@@ -105,6 +105,9 @@ p {
 .down-arrow {
   cursor: pointer;
   animation: arrow-animation 1s linear 0s infinite;
+  position: absolute;
+  bottom: 10%;
+  right: 50%;
 }
 
 .progress-bar {
@@ -150,9 +153,9 @@ p {
     justify-items: center;
   }
 
-  .familiar-learn-grid {
+  .learn-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   
   }
@@ -165,10 +168,7 @@ p {
     justify-items: center;
   }
 
-  .familiar-learn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-  
+  .ImDescription {
+    font-size: 2rem !important;
   }
 }
