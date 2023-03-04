@@ -4,7 +4,7 @@
   "description": "my personal webpage",
   "main": "index.tsx",
   "scripts": {
-    "build": "esbuild src/index.tsx --bundle --minify --sourcemap --outfile=public/dist/bundle.js",
+    "build": "esbuild src/index.tsx --bundle --minify --sourcemap --loader:.png=file --loader:.otf=file --loader:.ttf=file --outdir=public/dist",
     "start": "NODE_ENV=development node run.mjs"
   },
   "repository": {

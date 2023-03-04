@@ -47,10 +47,16 @@ export default function App(): JSX.Element {
   };
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
+    const onPageLoad = () => {
       setLoading(false);
-    }, 2000);
+    };
+
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
   }, []);
 
   useEffect(() => {
@@ -62,7 +68,7 @@ export default function App(): JSX.Element {
   ]);
 
   return (
-    <div>
+    <div >
       <div className="bg-noise"></div>
       {
         loading ?
