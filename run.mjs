@@ -11,8 +11,8 @@ function runServer() {
     gzip: true,
     brotli: true,
   });
-  const PORT = 4000;
-  server.listen(PORT);
+  // const PORT = 4000;
+  // server.listen(PORT);
   console.log('You can now view the app in the browser.\n');
   console.log('   Local:            http://localhost:' + PORT);
   console.log('   On Your Network:  http://192.168.1.3:' + PORT);
@@ -43,19 +43,19 @@ function runBuild() {
   });
 }
 
-chokidar.watch('./src/**', {
-  ignoreInitial: true,
-}).on('all', (event, path) => {
-  console.log('=> ', event, path);
-  runBuild();
-}).on('ready', () => {
-  runServer();
-  runBuild();
-  console.log('\n=====================================');
-  console.log('esbuild is waiting for changes...');
-  console.log('======================================\n');
-});
+// chokidar.watch('./src/**', {
+//   ignoreInitial: true,
+// }).on('all', (event, path) => {
+//   console.log('=> ', event, path);
+//   runBuild();
+// }).on('ready', () => {
+//   runServer();
+//   runBuild();
+//   console.log('\n=====================================');
+//   console.log('esbuild is waiting for changes...');
+//   console.log('======================================\n');
+// });
 
-process.on('warning', (warning) => {
-  console.log(warning.stack);
-});
+// process.on('warning', (warning) => {
+//   console.log(warning.stack);
+// });
