@@ -8,12 +8,12 @@ import UpperBar from '@components/Navbar/Upperbar/UpperBar';
 import BottomBar from '@components/Navbar/Bottombar/BottomBar';
 import MichelAngelos from '@components/MichelAngelos/MichelAngelos';
 import Loading from '@components/Loading/Loading';
-import TextArea from '@components/TextArea/TextArea';
 import { TechStackBox } from '@components/TechStackBox/TechStackBox';
 import useReadingProgress from '@components/ProgressScroll/ProgressScroll';
 import ContainerBox from '@components/ContainerBox/ContainerBox';
 import Input from '@components/Input/Input';
 import Textarea from '@components/TextArea/TextArea';
+import Button from '@components/Button/Button';
 import emailjs from '@emailjs/browser';
 
 
@@ -31,7 +31,7 @@ export default function App(): JSX.Element {
 
   const sendEmail = (e: any) => {
     e.preventDefault();
-    // emailjs.sendForm('service_1x9x9x9', 'template_1x9x9x9', e.target, 'user_1x9x9x9');
+    emailjs.sendForm('service_1x9x9x9', 'template_1x9x9x9', e.target, 'user_1x9x9x9');
   };
 
   useEffect(() => {
@@ -90,6 +90,7 @@ export default function App(): JSX.Element {
               <a href="#a">
                 <img className="down-arrow" src="assets/img/arrow-down.svg" alt="" />
               </a>
+              <span className={'michel-descript'}>Michelangelo (not me)</span>
             </div>
             <section className="techStack">
               <h3 className="tech-title">Most often i work with</h3>
@@ -136,15 +137,26 @@ export default function App(): JSX.Element {
                 Donec non nunc non mauris ultricies ullamcorper. Aenean hendrerit turpis eu lectus tincidunt fermentum.</p>
             </section>
             <section className="contact">
-              <h3>Let's connect</h3>
-              <ContainerBox width={'100%'}>
+              <div className={'contact-des'}>
+                {/* <h3>
+                  <h3>I'm always</h3>
+                  <h3>interested</h3>
+                  <h3>about cool</h3>
+                  <h3>stuff.</h3>
+                  <h3>Are you</h3>
+                  <h3>minding a</h3>
+                  <h3>project?</h3> */}
+                <h3>Let's connect</h3>
+                {/* </h3> */}
+              </div>
+              <ContainerBox className={'form-box'}>
                 <form className={'form'} onSubmit={sendEmail}>
                   <Input
                     useRef={email}
                     correctValue={setEmailValid}
                     type={'email'}
                     name={'email'}
-                    placeholder={'Email'}
+                    placeholder={'Your email'}
                     required
                     className={'email'}
                   />
@@ -161,14 +173,15 @@ export default function App(): JSX.Element {
                     useRef={message}
                     correctValue={setMessageValid}
                     name={'textSupport'}
-                    placeholder={'Your message...'}
+                    placeholder={'Your message'}
                     className={'textElement'}
                   />
+                  <Button text={'send'} typeof={'submit'}/>
                 </form>
               </ContainerBox>
             </section>
-            <footer>
-              <BottomBar />
+            <footer id={'footer'}>
+              <BottomBar className={'BottomBar'}/>
             </footer>
           </div>
       }

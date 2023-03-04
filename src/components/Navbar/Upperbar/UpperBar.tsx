@@ -4,27 +4,13 @@ import './UpperBar.css';
 export interface UpperBarProps {
   className?: string;
 }
-
-export interface UpperBarState {
-  active: boolean;
-}
-
-export default class UpperBar extends React.Component<UpperBarProps, UpperBarState> {
-  private static staticActive = true;
-
-  constructor(props: UpperBarProps) {
-    super(props);
-    this.state = {
-      active: UpperBar.staticActive,
-    };
-  }
-
+export default class UpperBar extends React.Component<UpperBarProps> {
   render(): JSX.Element {
     return (
-      <div className={`UpperBar ${this.props.className} ${this.state.active ? 'active' : ''}`}>
-        <nav className="UpperBarContent">
-          <div className="title">
-            <div className="title-container">
+      <div className={`UpperBar ${this.props.className}`}>
+        <nav className={'UpperBarContent'}>
+          <div className={'title'}>
+            <div className={'title-container'}>
               <a href="#home">
                 <span className="title-name">Filip Zolyniak</span>
               </a>

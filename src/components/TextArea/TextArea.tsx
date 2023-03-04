@@ -49,10 +49,10 @@ export default class Textarea extends Component<TextareaProps, TextareaState> {
 
   render(): JSX.Element {
     return (
-      <div ref={this.props.useRef} className="textAreaContainer">
+      <div ref={this.props.useRef} className={'textAreaContainer'}>
         <textarea className={this.props.className}
           name={this.props.name} placeholder={this.props.placeholder} onChange={this.validateInput} />
-        <span className="message">{this.state.message}</span>
+        <span className={'message-area'}>{this.state.message}</span>
       </div>
     );
   }

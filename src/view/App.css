@@ -8,6 +8,11 @@ body::-webkit-scrollbar{
   display: none;
 }
 
+
+.contact-des {
+  display: flex;
+}
+
 #MainWrap {
   min-height: 100vh;
   display: flex;
@@ -20,7 +25,7 @@ body::-webkit-scrollbar{
 
 #three-canvas-container {
   height: calc(100vh + 5vmin)!important;
-  animation: content-animation 0.5s linear 0s 1;
+  animation: content-animation 0.8s linear 0s 1;
   
   top: 0;
   left: 0;
@@ -33,6 +38,11 @@ body::-webkit-scrollbar{
   right: 28px;
   z-index: 11;
   height: 55px;
+}
+
+#footer {
+  width: 94%;
+  height: 75px;
 }
 
 .MainPage {
@@ -61,6 +71,12 @@ body::-webkit-scrollbar{
   opacity: 1;
   font-size: calc(0.25rem + 1vmin);
 }
+
+.BottomBar {
+  opacity: 1;
+  font-size: calc(0.25rem + 1vmin);
+}
+
 
 .tech-title {
   font-size: calc(2rem + 1vmin);
@@ -139,6 +155,23 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.form-box {
+  margin-bottom: 5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.michel-descript {
+  position: absolute;
+  font-size: 0.6rem;
+  right: 7%;
+  bottom: 15%;
 }
 
 

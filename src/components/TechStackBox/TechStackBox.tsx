@@ -12,8 +12,8 @@ export interface TechStackBoxProps {
 export class TechStackBox extends React.Component<TechStackBoxProps> {
   render(): JSX.Element {
     return (
-      <li className="box-container" style={{ width: this.props.width }} >
-        <img src={this.props.src} className="box-image" alt={this.props.alt}/>
+      <li className={'box-container'} style={{ width: this.props.width }} >
+        <img src={this.props.src} className={'box-image'} alt={this.props.alt}/>
         {this.props.text}
       </li>
     );

@@ -9,19 +9,19 @@ export default class BottomBar extends React.Component<BottomBarProps> {
   render(): JSX.Element {
     return (
       <div className={`BottomBar ${this.props.className}`}>
-        <nav className="BottomBarContent">
-          <div className="title">
-            <div className="title-container">
-              <a className="menuAnimation" href="mailto:filip@zoltw.com?">filip@zoltw.com</a>
+        <nav className={'BottomBarContent'}>
+          <div className={'title'}>
+            <div className={'title-container'}>
+              <a className={'menuAnimation'} href="mailto:filip@zoltw.com?">filip@zoltw.com</a>
             </div>
           </div>
-          <div className="menu">
+          <div className={'menu'}>
             <ul>
               <li>
                 <span >© 2023 zoltw</span>
               </li>
               <li >
-                <a className="menuAnimation" href="#t">credits</a>
+                <a className={'menuAnimation'} href="#t">credits</a>
               </li>
             </ul>
           </div>

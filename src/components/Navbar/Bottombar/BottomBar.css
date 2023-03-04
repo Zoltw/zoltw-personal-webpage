@@ -1,0 +1,10 @@
+.BottomBarContent {
+    padding-top: calc(1rem + 1vmin);
+    padding-bottom: calc(0.8rem + 1vmin);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid rgba(245,238,230,.5);
+    position: relative;
+    align-items: center;
+}

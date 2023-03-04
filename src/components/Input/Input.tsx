@@ -4,11 +4,6 @@ import './Input.css';
 
 // eslint-disable-next-line max-len, no-useless-escape
 const validEmailRegex = RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/);
-const passwordLengthRegex = RegExp(/^(?=.{8,64})/);
-const passwordCapitalLetterRegex = RegExp(/^(?=.*?[A-Z])/);
-const passwordLowercaseLetterRegex = RegExp(/^(?=.*?[a-z])/);
-const passwordNumberRegex = RegExp(/^(?=.*?[0-9])/);
-const passwordSpecialCharacterRegex = RegExp(/^(?=.*?[#?!@$%^&*-])/);
 
 export interface InputProps {
   type?: string,
@@ -114,7 +109,7 @@ export default class Inputs extends Component<InputProps, InputState> {
 
   render(): JSX.Element {
     return (
-      <div className="container">
+      <div className={'input-container'}>
         <input
           ref={this.props.useRef}
           className={`input ${this.props.className} ${this.props.shadows ? 'shadows' : ''}`}
@@ -127,7 +122,7 @@ export default class Inputs extends Component<InputProps, InputState> {
           required={this.props.required}
           onChange={this.changeEventHandler}
         />
-        <span className="message">{this.state.message}</span>
+        <span className={'message'}>{this.state.message}</span>
       </div>
     );
   }
