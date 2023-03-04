@@ -5,9 +5,10 @@ import './Button.css';
 
 export interface ButtonProps {
   text: string;
-  typeof: string;
+  typeof?: string;
   width?: string;
   className?: string;
+  type: 'button' | 'submit' | 'reset' | undefined;
 }
 
 // export interface ButtonState {
@@ -21,7 +22,7 @@ export default class ButtonForm extends Component<ButtonProps> {
         className={this.props.className}
         typeof={this.props.typeof}
         style={{ width: this.props.width }}
-        type='button'
+        type={this.props.type}
       >
         {this.props.text}
       </button>

@@ -25,7 +25,7 @@ body::-webkit-scrollbar{
 
 #three-canvas-container {
   height: calc(100vh + 5vmin)!important;
-  animation: content-animation 0.8s linear 0s 1;
+  animation: content-animation 1s linear 0s 1;
   
   top: 0;
   left: 0;
@@ -46,12 +46,10 @@ body::-webkit-scrollbar{
 }
 
 .MainPage {
-   display: flex;
-   justify-content: center;
    width: 100%;
-   height: 100%;
-   position: relative;
+   height: 100vh;
    margin-bottom: 10rem;
+   scroll-snap-align: start;
 }
 
 .Description {
@@ -77,6 +75,19 @@ body::-webkit-scrollbar{
   font-size: calc(0.25rem + 1vmin);
 }
 
+.footer {
+  scroll-snap-align: end;
+}
+
+.techStack {
+  scroll-snap-align: start;
+  margin-top: 10rem;
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .tech-title {
   font-size: calc(2rem + 1vmin);
@@ -147,14 +158,22 @@ p {
   visibility: visible;
 }
 
+.about {
+  scroll-snap-align: start;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 .contact {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  scroll-snap-align: start;
 }
 
 .form-box {
@@ -172,6 +191,11 @@ p {
   font-size: 0.6rem;
   right: 7%;
   bottom: 15%;
+}
+
+h3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 

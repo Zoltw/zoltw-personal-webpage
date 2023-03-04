@@ -3,6 +3,10 @@
   src: url("../resources/fonts/MainFont-regular.otf");
 }
 
+html {
+
+}
+
 body {
     margin: 0;
     /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,4 +28,15 @@ code {
 
 ::-webkit-scrollbar{
   width: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+  }
+  
+  :target {
+    scroll-margin-top: 0.8em;
+  }
 }

@@ -15,7 +15,7 @@ export interface TextareaProps {
 }
 
 export interface TextareaState {
-  message: string;
+  messager: string;
 }
 
 export default class Textarea extends Component<TextareaProps, TextareaState> {
@@ -27,7 +27,7 @@ export default class Textarea extends Component<TextareaProps, TextareaState> {
     super(props);
 
     this.state = {
-      message: '',
+      messager: '',
     };
   }
 
@@ -38,10 +38,10 @@ export default class Textarea extends Component<TextareaProps, TextareaState> {
 
     if (input.name.includes('text')) {
       if (!textLengthRegex.test(value)) {
-        this.setState({ message: 'Message must be beetween 5 and 256 characters' });
+        this.setState({ messager: 'Message must be beetween 5 and 256 characters' });
         this.props.correctValue?.(false);
       } else {
-        this.setState({ message: '' });
+        this.setState({ messager: '' });
         this.props.correctValue?.(true);
       }
     }
@@ -51,8 +51,10 @@ export default class Textarea extends Component<TextareaProps, TextareaState> {
     return (
       <div ref={this.props.useRef} className={'textAreaContainer'}>
         <textarea className={this.props.className}
-          name={this.props.name} placeholder={this.props.placeholder} onChange={this.validateInput} />
-        <span className={'message-area'}>{this.state.message}</span>
+          name={this.props.name}
+          placeholder={this.props.placeholder}
+          onChange={this.validateInput} />
+        <span className={'message-area'}>{this.state.messager}</span>
       </div>
     );
   }

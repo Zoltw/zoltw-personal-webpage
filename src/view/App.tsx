@@ -9,7 +9,6 @@ import BottomBar from '@components/Navbar/Bottombar/BottomBar';
 import MichelAngelos from '@components/MichelAngelos/MichelAngelos';
 import Loading from '@components/Loading/Loading';
 import { TechStackBox } from '@components/TechStackBox/TechStackBox';
-import useReadingProgress from '@components/ProgressScroll/ProgressScroll';
 import ContainerBox from '@components/ContainerBox/ContainerBox';
 import Input from '@components/Input/Input';
 import Textarea from '@components/TextArea/TextArea';
@@ -23,15 +22,28 @@ export default function App(): JSX.Element {
   const [messageValid, setMessageValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
-  const completion = useReadingProgress();
   const title = useRef(null);
   const email = useRef(null);
   const message = useRef(null);
-  // console.log(completion);
+  const refForm = useRef(null!);
 
-  const sendEmail = (e: any) => {
+  const sendEmail = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-    emailjs.sendForm('service_1x9x9x9', 'template_1x9x9x9', e.target, 'user_1x9x9x9');
+    emailjs
+      .sendForm(
+        'gmail',
+        'template',
+        refForm.current,
+        'key',
+      ).then(
+        () => {
+          alert('Email sent!');
+          window.location.reload();
+        },
+        (e) => {
+          alert(e.text);
+        },
+      );
   };
 
   useEffect(() => {
@@ -57,13 +69,12 @@ export default function App(): JSX.Element {
           <Loading /> :
           // Main wrap
           <div id="MainWrap">
-            <div className="progress-bar" id="progress-bar"></div>
             {/* Header */}
             <header id="header">
               <UpperBar className={'UpperBar'}/>
             </header>
             {/* Main content*/}
-            <div className="MainPage">
+            <div className="MainPage" id={'home'}>
               <div className="Description">
                 <span className="HelloDescription">Hello.</span>
                 <TypeAnimation
@@ -87,12 +98,12 @@ export default function App(): JSX.Element {
               <Canvas id="three-canvas-container" shadows>
                 <MichelAngelos />
               </Canvas>
-              <a href="#a">
+              <a href="#t">
                 <img className="down-arrow" src="assets/img/arrow-down.svg" alt="" />
               </a>
               <span className={'michel-descript'}>Michelangelo (not me)</span>
             </div>
-            <section className="techStack">
+            <section className="techStack" id={'t'}>
               <h3 className="tech-title">Most often i work with</h3>
               <ul className="most-often-grid">
                 <TechStackBox src={'assets/img/techStack/javascript.svg'} text={'javascript'}/>
@@ -131,12 +142,14 @@ export default function App(): JSX.Element {
                 <TechStackBox src={'assets/img/techStack/express-js.svg'} text={'express.js'}/>
               </ul>
             </section>
-            <section className="about">
-              <h3>About me</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat elementum tincidunt.
-                Donec non nunc non mauris ultricies ullamcorper. Aenean hendrerit turpis eu lectus tincidunt fermentum.</p>
+            <section className="about" id={'about'}>
+              <div>
+                <h3>About me</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer placerat elementum tincidunt.
+                  Donec non nunc non mauris ultricies ullamcorper. Aenean hendrerit turpis eu lectus tincidunt fermentum.</p>
+              </div>
             </section>
-            <section className="contact">
+            <section className="contact" id={'contact'}>
               <div className={'contact-des'}>
                 {/* <h3>
                   <h3>I'm always</h3>
@@ -150,7 +163,7 @@ export default function App(): JSX.Element {
                 {/* </h3> */}
               </div>
               <ContainerBox className={'form-box'}>
-                <form className={'form'} onSubmit={sendEmail}>
+                <form className={'form'} ref={refForm} onSubmit={sendEmail}>
                   <Input
                     useRef={email}
                     correctValue={setEmailValid}
@@ -172,15 +185,15 @@ export default function App(): JSX.Element {
                   <Textarea
                     useRef={message}
                     correctValue={setMessageValid}
-                    name={'textSupport'}
+                    name={'message'}
                     placeholder={'Your message'}
                     className={'textElement'}
                   />
-                  <Button text={'send'} typeof={'submit'}/>
+                  <Button text={'send'} type={'submit'}/>
                 </form>
               </ContainerBox>
             </section>
-            <footer id={'footer'}>
+            <footer className={'footer'} id={'footer'}>
               <BottomBar className={'BottomBar'}/>
             </footer>
           </div>

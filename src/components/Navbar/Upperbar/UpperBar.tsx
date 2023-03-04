@@ -3,11 +3,12 @@ import './UpperBar.css';
 
 export interface UpperBarProps {
   className?: string;
+  id?: string;
 }
 export default class UpperBar extends React.Component<UpperBarProps> {
   render(): JSX.Element {
     return (
-      <div className={`UpperBar ${this.props.className}`}>
+      <div className={`UpperBar ${this.props.className}`} id={this.props.id}>
         <nav className={'UpperBarContent'}>
           <div className={'title'}>
             <div className={'title-container'}>
