@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 
 import './App.css';
-import UpperBar from '@components/Navbar/Upperbar/UpperBar';
-import BottomBar from '@components/Navbar/Bottombar/BottomBar';
+import UpperBar from '@components/Navbars/Upperbar/UpperBar';
+import BottomBar from '@components/Navbars/Bottombar/BottomBar';
 import MichelAngelos from '@components/MichelAngelos/MichelAngelos';
 import Loading from '@components/Loading/Loading';
 import { TechStackSection } from '@components/TechStackSection/TechStackSection';

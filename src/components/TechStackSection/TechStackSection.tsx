@@ -42,7 +42,7 @@ export class TechStackSection extends React.Component<TechStackSectionProps> {
           <TechStackBox src={'assets/img/techStack/express-js.svg'} text={'express.js'}/>
         </ul>
         <h3 className="tech-title">During learning/want to learn</h3>
-        <ul className={'-grid'}>
+        <ul className={'learn-grid'}>
           <TechStackBox src={'assets/img/techStack/tailwind-css.svg'} text={'tailwindCSS'}/>
           <TechStackBox src={'assets/img/techStack/next-js.svg'} text={'next.js'}/>
           <TechStackBox src={'assets/img/techStack/tensorflow.svg'} text={'tensorflow'}/>

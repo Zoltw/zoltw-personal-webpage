@@ -1,4 +1,4 @@
-.input {
+input {
     padding: 1.3rem;
     font-family: var(--app-font-family);
     box-sizing: border-box;
@@ -31,4 +31,16 @@
   .shadow {
     box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
   }
-  
+
+  @media screen and (max-width: 550px) {
+    input {
+      width: calc(28rem + 4vmin);
+    }
+    
+  }
+
+  @media screen and (max-width: 390px) {
+    input {
+      width: calc(22rem + 4vmin);
+    }
+  }

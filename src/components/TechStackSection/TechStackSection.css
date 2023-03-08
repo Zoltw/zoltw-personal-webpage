@@ -39,5 +39,11 @@
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
     }
+
+    .tech-title {
+      font-size: calc(1.5rem + 1vmin);
+      display: flex;
+      justify-content: center;
+    }
 }
   
