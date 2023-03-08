@@ -14,6 +14,7 @@ body::-webkit-scrollbar{
   font-size: calc(4rem + 2vmin);
 }
 
+
 #MainWrap {
   min-height: 100vh;
   display: flex;
@@ -50,7 +51,7 @@ body::-webkit-scrollbar{
    width: 100%;
    height: 100vh;
    margin-bottom: 10rem;
-   scroll-snap-align: start;
+   /* scroll-snap-align: start; */
 }
 
 .Description {
@@ -77,11 +78,11 @@ body::-webkit-scrollbar{
 }
 
 .footer {
-  scroll-snap-align: end;
+  /* scroll-snap-align: end; */
 }
 
 .techStack {
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   margin-top: 10rem;
   height: 110vh;
   display: flex;
@@ -143,7 +144,7 @@ p {
 }
 
 .about {
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -151,20 +152,20 @@ p {
 
 .cool-stuff {
   padding-top: 10rem;
-  scroll-snap-align: start;
-  height: 150vh;
+  /* scroll-snap-align: start; */
+  height: 140vh;
 }
 
 .contact {
   position: relative;
   width: 100%;
-  height: 110vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-top: 13rem;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 }
 
 .about-section {
