@@ -7,4 +7,5 @@ button {
     width: 9rem;
     height: 3rem;
     cursor: pointer;
+    margin-top: 1rem;
 }

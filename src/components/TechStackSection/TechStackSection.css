@@ -1,0 +1,43 @@
+.tech-title {
+    font-size: calc(2rem + 1vmin);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .most-often-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+  
+  }
+  
+  .learn-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  
+  }
+
+  @media screen and (max-width: 920px) {
+    .most-often-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+    }
+  
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    
+    }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .most-often-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+}
+  
