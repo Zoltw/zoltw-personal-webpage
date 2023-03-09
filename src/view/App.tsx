@@ -48,7 +48,7 @@ export default function App(): JSX.Element {
   };
 
   const handleFileLoad = async () => {
-    // setLoading(true);
+    setLoading(true);
     try {
       await fetch('public/assets/models/michel_angelos.glb');
       setLoading(false);
@@ -59,7 +59,7 @@ export default function App(): JSX.Element {
 
   useEffect(() => {
     const onPageLoad = () => {
-      // setLoading(false);
+      setLoading(false);
     };
 
     if (document.readyState === 'complete') {
@@ -81,12 +81,10 @@ export default function App(): JSX.Element {
   return (
     <div >
       {/* <div className="bg-noise"></div> */}
+      <div onLoad={handleFileLoad}></div>
       {
         loading ?
-          <>
-            <Loading />
-            <div onLoad={handleFileLoad}></div>
-          </> :
+          <Loading /> :
           // Main wrap
           <div id="MainWrap">
             {/* Header */}
