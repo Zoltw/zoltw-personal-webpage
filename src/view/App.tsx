@@ -19,7 +19,7 @@ import FileLoader from '@components/FileLoader/FileLoader';
 
 
 export default function App(): JSX.Element {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [titleValid, setTitleValid] = useState(false);
   const [messageValid, setMessageValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
