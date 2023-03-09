@@ -15,6 +15,7 @@ import Textarea from '@components/TextArea/TextArea';
 import Button from '@components/Button/Button';
 import { About } from '@components/About/About';
 import emailjs from '@emailjs/browser';
+import FileLoader from '@components/FileLoader/FileLoader';
 
 
 export default function App(): JSX.Element {
@@ -81,7 +82,8 @@ export default function App(): JSX.Element {
   return (
     <div >
       {/* <div className="bg-noise"></div> */}
-      <div onLoad={handleFileLoad}></div>
+      <FileLoader fileUrl='public/assets/models/michel_angelos.glb'/>
+      {/* <div onLoad={handleFileLoad}></div> */}
       {
         loading ?
           <Loading /> :
