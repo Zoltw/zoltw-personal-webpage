@@ -6,9 +6,9 @@
     justify-content: center;
 }
 
-.MichelLoading {
+/* .MichelLoading {
     animation: hide 1s linear 1s; 
-}
+} */
 
 .HideImg {
     animation: spin infinite 2s linear;
@@ -19,7 +19,7 @@
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(400deg);
+      transform: rotate(360deg);
     }
 }
 

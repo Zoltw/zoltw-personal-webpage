@@ -48,28 +48,47 @@ export default function App(): JSX.Element {
       );
   };
 
-  const handleFileLoad = async () => {
-    setLoading(true);
-    try {
-      await fetch('public/assets/models/michel_angelos.glb');
-      setLoading(false);
-    } catch (e) {
-      console.log(e);
-    }
-  };
 
   useEffect(() => {
-    const onPageLoad = () => {
-      setLoading(false);
+    const handleFileLoad = async () => {
+      setLoading(true);
+      try {
+        await fetch('public/assets/models/michel_angelos.glb');
+        setLoading(false);
+      } catch (e) {
+        console.log(e);
+      }
     };
-
-    if (document.readyState === 'complete') {
-      onPageLoad();
-    } else {
-      window.addEventListener('load', onPageLoad);
-      return () => window.removeEventListener('load', onPageLoad);
+    if (document.readyState !== 'complete') {
+      handleFileLoad();
     }
-  }, []);
+  }, ['public/assets/models/michel_angelos.glb']);
+
+  // useEffect(() => {
+  //   const xhr = new XMLHttpRequest();
+
+  //   xhr.onreadystatechange = () => {
+  //     if (xhr.readyState === 4) {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   xhr.open('GET', 'public/assets/models/michel_angelos.glb');
+  //   xhr.send();
+  // }, ['public/assets/models/michel_angelos.glb']);
+
+  // useEffect(() => {
+  //   const onPageLoad = () => {
+  //     setLoading(false);
+  //   };
+
+  //   if (document.readyState === 'complete') {
+  //     onPageLoad();
+  //   } else {
+  //     window.addEventListener('load', onPageLoad);
+  //     return () => window.removeEventListener('load', onPageLoad);
+  //   }
+  // }, []);
 
   useEffect(() => {
     setIsFormValid(titleValid && messageValid && emailValid);
@@ -82,7 +101,7 @@ export default function App(): JSX.Element {
   return (
     <div >
       {/* <div className="bg-noise"></div> */}
-      <FileLoader fileUrl='public/assets/models/michel_angelos.glb'/>
+      {/* <FileLoader fileUrl='public/assets/models/michel_angelos.glb'/> */}
       {/* <div onLoad={handleFileLoad}></div> */}
       {
         loading ?
