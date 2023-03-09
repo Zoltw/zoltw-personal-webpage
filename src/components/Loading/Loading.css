@@ -6,9 +6,9 @@
     justify-content: center;
 }
 
-/* .MichelLoading {
-    animation: hide 1s linear 1s; 
-} */
+.MichelLoading {
+    animation: hide 4s linear; 
+}
 
 .HideImg {
     animation: spin infinite 2s linear;
@@ -25,10 +25,10 @@
 
 @keyframes hide {
     from {
-      opacity: 1;
+      opacity: 0;
     }
     to {
-      opacity: 0;
+      opacity: 1;
     }
 }
 
