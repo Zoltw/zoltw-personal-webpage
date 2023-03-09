@@ -18,7 +18,7 @@ import emailjs from '@emailjs/browser';
 
 
 export default function App(): JSX.Element {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [titleValid, setTitleValid] = useState(false);
   const [messageValid, setMessageValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
@@ -47,9 +47,19 @@ export default function App(): JSX.Element {
       );
   };
 
+  const handleFileLoad = async () => {
+    // setLoading(true);
+    try {
+      await fetch('public/assets/models/michel_angelos.glb');
+      setLoading(false);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     const onPageLoad = () => {
-      setLoading(false);
+      // setLoading(false);
     };
 
     if (document.readyState === 'complete') {
@@ -73,7 +83,10 @@ export default function App(): JSX.Element {
       {/* <div className="bg-noise"></div> */}
       {
         loading ?
-          <Loading /> :
+          <>
+            <Loading />
+            <div onLoad={handleFileLoad}></div>
+          </> :
           // Main wrap
           <div id="MainWrap">
             {/* Header */}
