@@ -27,7 +27,7 @@ body::-webkit-scrollbar{
 
 #three-canvas-container {
   height: calc(100vh + 5vmin)!important;
-  animation: content-animation 1s linear 0s 1;
+  animation: content-animation 3s linear 0s 1;
   
   top: 0;
   left: 0;

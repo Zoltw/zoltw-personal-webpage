@@ -49,33 +49,33 @@ export default function App(): JSX.Element {
   };
 
 
-  useEffect(() => {
-    const handleFileLoad = async () => {
-      setLoading(true);
-      try {
-        await fetch('public/assets/models/michel_angelos.glb');
-        setLoading(false);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    if (document.readyState !== 'complete') {
-      handleFileLoad();
-    }
-  }, ['public/assets/models/michel_angelos.glb']);
-
   // useEffect(() => {
-  //   const xhr = new XMLHttpRequest();
-
-  //   xhr.onreadystatechange = () => {
-  //     if (xhr.readyState === 4) {
+  //   const handleFileLoad = async () => {
+  //     setLoading(true);
+  //     try {
+  //       await fetch('public/assets/models/michel_angelos.glb');
   //       setLoading(false);
+  //     } catch (e) {
+  //       console.log(e);
   //     }
   //   };
-
-  //   xhr.open('GET', 'public/assets/models/michel_angelos.glb');
-  //   xhr.send();
+  //   if (document.readyState !== 'complete') {
+  //     handleFileLoad();
+  //   }
   // }, ['public/assets/models/michel_angelos.glb']);
+
+  useEffect(() => {
+    const xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4) {
+        setLoading(false);
+      }
+    };
+
+    xhr.open('GET', 'public/assets/models/michel_angelos.glb');
+    xhr.send();
+  }, ['public/assets/models/michel_angelos.glb']);
 
   // useEffect(() => {
   //   const onPageLoad = () => {
