@@ -30,6 +30,7 @@ code {
   html {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+    overflow-x: hidden;
   }
   
   :target {

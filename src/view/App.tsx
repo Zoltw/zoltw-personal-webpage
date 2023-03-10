@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
@@ -45,7 +45,6 @@ export default function App(): JSX.Element {
       );
   };
 
-
   useEffect(() => {
     setIsFormValid(titleValid && messageValid && emailValid);
   }, [
@@ -64,6 +63,9 @@ export default function App(): JSX.Element {
         </header>
         {/* Main content*/}
         <div className="MainPage" id={'home'}>
+          <Canvas id="three-canvas-container" shadows>
+            <MichelAngelos />
+          </Canvas>
           <div className="Description">
             <span className="HelloDescription">Hello.</span>
             <TypeAnimation
@@ -84,9 +86,6 @@ export default function App(): JSX.Element {
               style={{ fontSize: 'calc(90px + 2vmin)' }}
             />
           </div>
-          <Canvas id="three-canvas-container" shadows>
-            <MichelAngelos />
-          </Canvas>
           <a href="#t">
             <img className="down-arrow" src="assets/img/arrow-down.svg" alt="" />
           </a>

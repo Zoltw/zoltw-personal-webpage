@@ -10,6 +10,10 @@ export default class UpperBar extends React.Component<UpperBarProps> {
     return (
       <div className={`UpperBar ${this.props.className}`} id={this.props.id}>
         <nav className={'UpperBarContent'}>
+          <div className={'burger'}>
+            <img src="assets/img/burger.svg" alt="" />
+            <a href=""></a>
+          </div>
           <div className={'title'}>
             <div className={'title-container'}>
               <a href="#home">

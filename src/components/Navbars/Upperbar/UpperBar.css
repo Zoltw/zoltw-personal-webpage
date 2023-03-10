@@ -13,6 +13,7 @@
     position: relative;
     align-items: center;
     backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
 }
 
 a {
@@ -63,16 +64,27 @@ ul {
     transition: transform 0.35s ease-out;
 }
 
+.burger {
+    display: none;
+}
+
 .menuAnimation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
 @media screen and (max-width: 390px) {
-    /* .UpperBarContent {
-        padding-top: calc(0.5rem + 1vmin);
-        padding-bottom: calc(0.5rem + 1vmin);
-    } */
+    .title {
+        display: none;
+    }
+    .burger {
+        display: flex;
+        position: relative;
+        left: 5%;
+        height: 2rem;
+        width: 2rem;
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 700px) {

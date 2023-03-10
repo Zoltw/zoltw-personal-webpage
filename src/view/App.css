@@ -1,5 +1,6 @@
 body {
   background-color: #131313;
+  /* background-color: #050505; */
   margin: 0;
   overflow-x: hidden;
 }
@@ -61,7 +62,7 @@ body::-webkit-scrollbar{
   position: absolute;
   top: 0;
   left: 0;
-  right: -50%;
+  right: -60%;
   z-index: 10;
   margin-top: 8rem;
   margin-left: 2rem;
@@ -84,7 +85,7 @@ body::-webkit-scrollbar{
 .techStack {
   /* scroll-snap-align: start; */
   margin-top: 10rem;
-  height: 110vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,7 +146,7 @@ p {
 
 .about {
   /* scroll-snap-align: start; */
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -153,18 +154,18 @@ p {
 .cool-stuff {
   padding-top: 10rem;
   /* scroll-snap-align: start; */
-  height: 140vh;
+  min-height: 150vh;
 }
 
 .contact {
   position: relative;
-  width: 100%;
-  height: 80vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 13rem;
+  margin-bottom: 1rem;
+  padding-top: 3rem;
   /* scroll-snap-align: start; */
 }
 
@@ -269,6 +270,21 @@ h3 {
   .form {
     width: calc(22rem + 2vmin);
   }
+
+  #header {
+    left: 0;
+    right: 0;
+  }
+
+  .Description {
+    margin-left: 1rem;
+    right: 0;
+  }
+
+  .michel-descript {
+    bottom: 20%;
+    right: 3%;
+  }
   
   .techStack {
     height: 260vh;
@@ -284,4 +300,18 @@ h3 {
     width: 23rem;
   }
 
+  .UpperBar {
+    font-size: calc(0.35rem + 1vmin);
+  }
+
+}
+
+@media screen and (max-height: 740px) {
+  .about {
+    margin-top: 10rem;
+  }
+
+  .techStack {
+    padding-top: 10rem;
+  }
 }
