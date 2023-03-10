@@ -39,7 +39,7 @@ input {
     
   }
 
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 430px) {
     input {
       width: calc(22rem + 4vmin);
     }

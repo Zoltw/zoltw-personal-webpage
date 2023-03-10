@@ -7,11 +7,18 @@ export interface UpperBarProps {
 }
 export default class UpperBar extends React.Component<UpperBarProps> {
   render(): JSX.Element {
+    const showSideBar = () => {
+      const sideBar = document.querySelector('.sidebar');
+      if (sideBar) {
+        sideBar.classList.toggle('visible');
+        sideBar.classList.toggle('hidden');
+      }
+    };
     return (
       <div className={`UpperBar ${this.props.className}`} id={this.props.id}>
         <nav className={'UpperBarContent'}>
           <div className={'burger'}>
-            <img src="assets/img/burger.svg" alt="" />
+            <img src="assets/img/burger.svg" alt="" onClick={showSideBar}/>
             <a href=""></a>
           </div>
           <div className={'title'}>
@@ -22,13 +29,13 @@ export default class UpperBar extends React.Component<UpperBarProps> {
               <span>Software Engineer</span>
             </div>
             <div className="icons">
-              <a href="https://github.com/Zoltw" target="_blank" rel="noopener noreferrer">
+              <a className={'storm-ani'} href="https://github.com/Zoltw" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/square-github.svg" alt="Github" />
               </a>
-              <a href="https://www.linkedin.com/in/filip-żołyniak-807a02267/" target="_blank" rel="noopener noreferrer">
+              <a className={'storm-ani'} href="https://www.linkedin.com/in/filip-żołyniak-807a02267/" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/linkedin.svg" alt="Linkedin" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a className={'storm-ani'} href="#" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/file-solid.svg" alt="Resume" />
               </a>
             </div>

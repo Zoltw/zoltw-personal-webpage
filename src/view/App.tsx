@@ -14,6 +14,7 @@ import Textarea from '@components/TextArea/TextArea';
 import Button from '@components/Button/Button';
 import { About } from '@components/About/About';
 import emailjs from '@emailjs/browser';
+import Sidebar from '@components/Navbars/SideBar/SideBar';
 
 
 export default function App(): JSX.Element {
@@ -21,6 +22,7 @@ export default function App(): JSX.Element {
   const [messageValid, setMessageValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isSideBarVisible, setSideBarVisible] = useState(false);
   const title = useRef(null);
   const email = useRef(null);
   const message = useRef(null);
@@ -61,6 +63,7 @@ export default function App(): JSX.Element {
         <header id="header">
           <UpperBar className={'UpperBar'}/>
         </header>
+        <Sidebar visible={isSideBarVisible}/>
         {/* Main content*/}
         <div className="MainPage" id={'home'}>
           <Canvas id="three-canvas-container" shadows>

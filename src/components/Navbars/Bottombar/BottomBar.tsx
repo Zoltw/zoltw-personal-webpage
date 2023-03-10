@@ -7,6 +7,13 @@ export interface BottomBarProps {
 
 export default class BottomBar extends React.Component<BottomBarProps> {
   render(): JSX.Element {
+    const showSideBarFromBB = () => {
+      const sideBar = document.querySelector('.sidebar');
+      if (sideBar) {
+        sideBar.classList.toggle('visible');
+        sideBar.classList.toggle('hidden');
+      }
+    };
     return (
       <div className={`BottomBar ${this.props.className}`}>
         <nav className={'BottomBarContent'}>
@@ -18,10 +25,10 @@ export default class BottomBar extends React.Component<BottomBarProps> {
           <div className={'menu'}>
             <ul>
               <li>
-                <span >© 2023 zoltw</span>
+                <span>© 2023 zoltw</span>
               </li>
               <li >
-                <a className={'menuAnimation'} href="#t">credits</a>
+                <a className={'menuAnimation'} onClick={showSideBarFromBB}>credits</a>
               </li>
             </ul>
           </div>

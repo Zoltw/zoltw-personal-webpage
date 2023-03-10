@@ -34,6 +34,6 @@ code {
   }
   
   :target {
-    scroll-margin-top: 0.8em;
+    /* scroll-margin-top: 0.8em; */
   }
 }

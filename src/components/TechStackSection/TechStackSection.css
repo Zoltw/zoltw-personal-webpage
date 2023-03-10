@@ -46,4 +46,11 @@
       justify-content: center;
     }
 }
+
+@media screen and (max-width: 430px) {
+  .tech-title {
+    font-size: calc(0.8rem + 1vmin);
+  }
+  
+}
   

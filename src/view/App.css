@@ -266,7 +266,7 @@ h3 {
 
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .form {
     width: calc(22rem + 2vmin);
   }
@@ -308,10 +308,10 @@ h3 {
 
 @media screen and (max-height: 740px) {
   .about {
-    margin-top: 10rem;
+    margin-top: 15rem;
   }
 
   .techStack {
-    padding-top: 10rem;
+    padding-top: 12rem;
   }
 }
