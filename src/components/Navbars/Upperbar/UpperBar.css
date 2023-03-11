@@ -72,7 +72,6 @@ ul {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-  
 
 @media screen and (max-width: 430px) {
     .title {

@@ -117,7 +117,7 @@ p {
   animation: arrow-animation 1s linear 0s infinite;
   position: absolute;
   bottom: 10%;
-  right: 50%;
+  right: 49%;
 }
 
 .progress-bar {
@@ -202,6 +202,9 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.captcha {
+  display: flex;
+}
 
 @keyframes bg-animation {
     0% { transform: translate(0,0) }
@@ -268,7 +271,13 @@ h3 {
 
 @media screen and (max-width: 430px) {
   .form {
-    width: calc(22rem + 2vmin);
+    width: 23rem;
+  }
+
+  .captcha {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
   }
 
   #header {
@@ -304,6 +313,9 @@ h3 {
     font-size: calc(0.35rem + 1vmin);
   }
 
+  .down-arrow {
+    right: 45%;
+  }
 }
 
 @media screen and (max-height: 740px) {

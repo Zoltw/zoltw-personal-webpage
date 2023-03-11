@@ -2,6 +2,7 @@ import React, { Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import './App.css';
 import UpperBar from '@components/Navbars/Upperbar/UpperBar';
@@ -21,12 +22,16 @@ export default function App(): JSX.Element {
   const [titleValid, setTitleValid] = useState(false);
   const [messageValid, setMessageValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
+  const [captchaValid, setCaptchaValid] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
   const [isSideBarVisible, setSideBarVisible] = useState(false);
   const title = useRef(null);
   const email = useRef(null);
   const message = useRef(null);
   const refForm = useRef(null!);
+  const onChange = () => {
+    setCaptchaValid(true);
+  };
 
   const sendEmail = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -46,13 +51,16 @@ export default function App(): JSX.Element {
         },
       );
   };
+  // console.log(isFormValid);
+  console.log(captchaValid);
 
   useEffect(() => {
-    setIsFormValid(titleValid && messageValid && emailValid);
+    setIsFormValid(titleValid && messageValid && emailValid && captchaValid);
   }, [
     titleValid,
     messageValid,
     emailValid,
+    captchaValid,
   ]);
 
   return (
@@ -136,11 +144,15 @@ export default function App(): JSX.Element {
               <Textarea
                 useRef={message}
                 correctValue={setMessageValid}
-                name={'message'}
-                placeholder={'Your message'}
+                name={'textSupp'}
+                placeholder={'Your message...'}
+                required
                 className={'textElement'}
               />
-              <Button text={'send'} type={'submit'}/>
+              <div className={'captcha'}>
+                <ReCAPTCHA sitekey="key" onClick={onChange}/>
+                <Button isActive={isFormValid} text={'send'} />
+              </div>
             </form>
           </ContainerBox>
         </section>

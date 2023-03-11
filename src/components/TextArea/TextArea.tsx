@@ -11,6 +11,7 @@ export interface TextareaProps {
   shadows?: boolean,
   className?: string,
   useRef?: React.RefObject<HTMLInputElement>;
+  required?: boolean;
   correctValue?: (isCorrect: boolean) => void,
 }
 
@@ -53,6 +54,7 @@ export default class Textarea extends Component<TextareaProps, TextareaState> {
         <textarea className={this.props.className}
           name={this.props.name}
           placeholder={this.props.placeholder}
+          required={this.props.required}
           onChange={this.validateInput} />
         <span className={'message-area'}>{this.state.messager}</span>
       </div>

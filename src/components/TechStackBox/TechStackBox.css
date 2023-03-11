@@ -11,7 +11,8 @@
     align-items: center;
     justify-content: space-evenly;
     margin-bottom: 1rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .box-image {

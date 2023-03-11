@@ -9,3 +9,11 @@ button {
     cursor: pointer;
     margin-top: 1rem;
 }
+
+.disabled {
+    filter: saturate(50%);
+    opacity: 0.75;
+    transform: translateZ(1);
+  
+    cursor: not-allowed !important;
+  }
