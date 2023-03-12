@@ -29,13 +29,13 @@ export default class UpperBar extends React.Component<UpperBarProps> {
               <span>Software Engineer</span>
             </div>
             <div className="icons">
-              <a className={'storm-ani'} href="https://github.com/Zoltw" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Zoltw" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/square-github.svg" alt="Github" />
               </a>
-              <a className={'storm-ani'} href="https://www.linkedin.com/in/filip-żołyniak-807a02267/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/filip-żołyniak-807a02267/" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/linkedin.svg" alt="Linkedin" />
               </a>
-              <a className={'storm-ani'} href="#" target="_blank" rel="noopener noreferrer">
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <img src="assets/img/file-solid.svg" alt="Resume" />
               </a>
             </div>

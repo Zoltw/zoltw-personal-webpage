@@ -11,6 +11,7 @@ body {
     font-family: "Monument", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
   
 code {
@@ -30,10 +31,5 @@ code {
   html {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
-    overflow-x: hidden;
-  }
-  
-  :target {
-    /* scroll-margin-top: 0.8em; */
   }
 }

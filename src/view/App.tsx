@@ -1,8 +1,9 @@
-import React, { Suspense, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import ReCAPTCHA from 'react-google-recaptcha';
+import gsap from 'gsap';
 
 import './App.css';
 import UpperBar from '@components/Navbars/Upperbar/UpperBar';
@@ -29,6 +30,8 @@ export default function App(): JSX.Element {
   const email = useRef(null);
   const message = useRef(null);
   const refForm = useRef(null!);
+  const textRef = useRef<HTMLSpanElement>(null);
+  const headerRef = useRef<HTMLHeadElement>(null);
   const onChange = () => {
     setCaptchaValid(true);
   };
@@ -51,8 +54,29 @@ export default function App(): JSX.Element {
         },
       );
   };
-  // console.log(isFormValid);
-  console.log(captchaValid);
+
+  useEffect(() => {
+    gsap.fromTo(textRef.current, {
+      yPercent: 150,
+      autoAlpha: 0,
+    }, {
+      autoAlpha: 1,
+      duration: 1,
+      stagger: .2,
+      yPercent: 0,
+      ease: 'power4',
+    });
+    gsap.from(headerRef.current, {
+      y: -100,
+    });
+    gsap.to(headerRef.current, {
+      delay: 1,
+      duration: 1,
+      opacity: 1,
+      y: 0,
+      ease: 'power1.out',
+    });
+  }, []);
 
   useEffect(() => {
     setIsFormValid(titleValid && messageValid && emailValid && captchaValid);
@@ -68,7 +92,7 @@ export default function App(): JSX.Element {
       {/* Main wrap */}
       <div id="MainWrap">
         {/* Header */}
-        <header id="header">
+        <header id="header" ref={headerRef}>
           <UpperBar className={'UpperBar'}/>
         </header>
         <Sidebar visible={isSideBarVisible}/>
@@ -78,7 +102,7 @@ export default function App(): JSX.Element {
             <MichelAngelos />
           </Canvas>
           <div className="Description">
-            <span className="HelloDescription">Hello.</span>
+            <span className="HelloDescription" ref={textRef}>Hello.</span>
             <TypeAnimation
               className="ImDescription"
               sequence={[
@@ -109,13 +133,13 @@ export default function App(): JSX.Element {
           <About className={'about-section'}/>
         </section>
         <section className={'cool-stuff'} id={'stuff'}>
-          <h3>I'm always</h3>
-          <h3>interested</h3>
-          <h3>about cool</h3>
-          <h3>stuff.</h3>
-          <h3>Are you</h3>
-          <h3>minding a</h3>
-          <h3>project?</h3>
+          <h3 id={'aniH3'}>I'm always</h3>
+          <h3 id={'aniH3'}>interested</h3>
+          <h3 id={'aniH3'}>about cool</h3>
+          <h3 id={'aniH3'}>stuff.</h3>
+          <h3 id={'aniH3'}>Are you</h3>
+          <h3 id={'aniH3'}>minding a</h3>
+          <h3 id={'aniH3'}>project?</h3>
         </section>
         <section className="contact" id={'contact'}>
           <div className={'contact-des'}>
@@ -150,7 +174,7 @@ export default function App(): JSX.Element {
                 className={'textElement'}
               />
               <div className={'captcha'}>
-                <ReCAPTCHA sitekey="key" onClick={onChange}/>
+                <ReCAPTCHA sitekey="6LeYAO8kAAAAACf1FzZcVumSrUQPvgniHkhp1VF_" onClick={onChange}/>
                 <Button isActive={isFormValid} text={'send'} />
               </div>
             </form>

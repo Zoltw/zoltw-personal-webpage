@@ -24,6 +24,7 @@
     "@typescript-eslint/parser": "^5.53.0",
     "eslint": "^8.34.0",
     "eslint-config-google": "^0.14.0",
+    "gsap": "^3.11.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",

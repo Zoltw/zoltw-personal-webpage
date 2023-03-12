@@ -206,6 +206,7 @@ h3 {
   display: flex;
 }
 
+
 @keyframes bg-animation {
     0% { transform: translate(0,0) }
     10% { transform: translate(-5%,-5%) }
@@ -325,5 +326,23 @@ h3 {
 
   .techStack {
     padding-top: 12rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .HelloDescription {
+    font-size: 5.5rem;
+  }  
+
+  .techStack {
+    padding-top: 16rem;
+  }
+
+  p {
+    width: 22rem;
+  }
+
+  .cool-stuff {
+    font-size: calc(33px + 2vmin);
   }
 }

@@ -23,12 +23,13 @@
     justify-content: space-between;
   }
 
-  .bottom-b {
+  .upper-b {
     border-bottom: 1px solid rgba(245,238,230,.5);
     position: relative;
     left: 20px;
     width: 16rem;
   }
+
 
   .title-name {
     font-size: 1rem;
@@ -71,6 +72,21 @@
     margin: 1rem 0 1rem 0;
  }
 
+ .side-img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.5rem;
+}
+
+.bottom-b {
+  border-bottom: 1px solid rgba(245,238,230,.5);
+  position: relative;
+  left: 20px;
+  width: 16rem;
+}
+
+
+
  .menuAnimation-credits {
     display: inline-block;
     position: relative;
@@ -101,5 +117,5 @@
 .pers {
     font-size: 0.5rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
-  

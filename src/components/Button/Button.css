@@ -11,8 +11,8 @@ button {
 }
 
 .disabled {
-    filter: saturate(50%);
-    opacity: 0.75;
+    filter: saturate(100%);
+    opacity: 0.25;
     transform: translateZ(1);
   
     cursor: not-allowed !important;

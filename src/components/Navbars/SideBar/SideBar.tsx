@@ -24,16 +24,17 @@ export default class SideBar extends Component<SideBarProps> {
             </a>
             <img className={'x-mark'} src="assets/img/xmark.svg" onClick={hideSideBar} />
           </div>
-          <div className={'bottom-b'}></div>
-          <div className={'links'}>
-            <ul className={'side-list'}>
-              <li className={'side-pointers'}>
-                <a className="menuAnimation" href="https://github.com/Zoltw">github</a>
-              </li>
-              <li className={'side-pointers'}>
-                <a className="menuAnimation" href="https://www.linkedin.com/in/filip-żołyniak-807a02267/">linkedin</a>
-              </li>
-            </ul>
+          <div className={'upper-b'}></div>
+          <div className="icons">
+            <a href="https://github.com/Zoltw" target="_blank" rel="noopener noreferrer">
+              <img className={'side-img'} src="assets/img/square-github.svg" alt="Github" />
+            </a>
+            <a href="https://www.linkedin.com/in/filip-żołyniak-807a02267/" target="_blank" rel="noopener noreferrer">
+              <img className={'side-img'} src="assets/img/linkedin.svg" alt="Linkedin" />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img className={'side-img'} src="assets/img/file-solid.svg" alt="Resume" />
+            </a>
           </div>
           <div className={'bottom-b'}></div>
           <div className={'credits'}>
