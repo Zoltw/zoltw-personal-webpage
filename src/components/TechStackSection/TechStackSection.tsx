@@ -5,12 +5,13 @@ import './TechStackSection.css';
 export interface TechStackSectionProps {
   width?: string;
   className?: string;
+  id?: string;
 }
 
 export class TechStackSection extends React.Component<TechStackSectionProps> {
   render(): JSX.Element {
     return (
-      <div className={this.props.className}>
+      <div className={this.props.className} id={this.props.id}>
         <h3 className={'tech-title'}>Most often i work with</h3>
         <ul className={'most-often-grid'}>
           <TechStackBox src={'assets/img/techStack/javascript.svg'} text={'javascript'}/>

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import ReCAPTCHA from 'react-google-recaptcha';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import './App.css';
 import UpperBar from '@components/Navbars/Upperbar/UpperBar';
@@ -20,6 +21,7 @@ import Sidebar from '@components/Navbars/SideBar/SideBar';
 
 
 export default function App(): JSX.Element {
+  gsap.registerPlugin(ScrollTrigger);
   const [titleValid, setTitleValid] = useState(false);
   const [messageValid, setMessageValid] = useState(false);
   const [emailValid, setEmailValid] = useState(false);
@@ -32,6 +34,11 @@ export default function App(): JSX.Element {
   const refForm = useRef(null!);
   const textRef = useRef<HTMLSpanElement>(null);
   const headerRef = useRef<HTMLHeadElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const tech = useRef<HTMLDivElement>(null);
+  const about = useRef<HTMLDivElement>(null);
+  const stuff = useRef<HTMLDivElement>(null);
+  const word = useRef<HTMLTitleElement>(null);
   const onChange = () => {
     setCaptchaValid(true);
   };
@@ -76,14 +83,87 @@ export default function App(): JSX.Element {
       y: 0,
       ease: 'power1.out',
     });
+    gsap.fromTo(canvasRef.current, {
+      xPercent: 150,
+      autoAlpha: 0,
+    }, {
+      delay: 0.5,
+      autoAlpha: 1,
+      duration: 1,
+      stagger: .2,
+      xPercent: 0,
+      ease: 'power2',
+    });
   }, []);
 
   useEffect(() => {
-    setIsFormValid(titleValid && messageValid && emailValid && captchaValid);
+    gsap.fromTo(tech.current, {
+      y: -250,
+      autoAlpha: 0,
+      opacity: 0,
+    }, {
+      delay: 1,
+      opacity: 1,
+      autoAlpha: 1,
+      y: 0,
+      duration: 1,
+      ease: 'slow',
+      scrollTrigger: {
+        trigger: '#arrow',
+        scrub: true,
+      },
+    });
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(about.current, {
+      y: -100,
+      autoAlpha: 0,
+      opacity: -1,
+    }, {
+      y: 0,
+      delay: 1,
+      opacity: 2,
+      autoAlpha: 1,
+      duration: 1,
+      ease: 'slow',
+      scrollTrigger: {
+        trigger: '#about',
+        scrub: true,
+      },
+    });
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(stuff.current, {
+      scale: 0.5,
+      y: -300,
+      // x: -500,
+      autoAlpha: 0,
+      opacity: 0,
+    }, {
+      y: 0,
+      // x: 0,
+      scale: 1,
+      delay: 1,
+      opacity: 2,
+      autoAlpha: 1.5,
+      duration: 1,
+      ease: 'slow',
+      scrollTrigger: {
+        trigger: '#aniH1',
+        scrub: true,
+      },
+    });
+  }, []);
+
+
+  useEffect(() => {
+    setIsFormValid(emailValid && titleValid && messageValid && captchaValid);
   }, [
+    emailValid,
     titleValid,
     messageValid,
-    emailValid,
     captchaValid,
   ]);
 
@@ -98,7 +178,7 @@ export default function App(): JSX.Element {
         <Sidebar visible={isSideBarVisible}/>
         {/* Main content*/}
         <div className="MainPage" id={'home'}>
-          <Canvas id="three-canvas-container" shadows>
+          <Canvas id="three-canvas-container" ref={canvasRef} shadows>
             <MichelAngelos />
           </Canvas>
           <div className="Description">
@@ -122,24 +202,25 @@ export default function App(): JSX.Element {
             />
           </div>
           <a href="#t">
-            <img className="down-arrow" src="assets/img/arrow-down.svg" alt="" />
+            <img className="down-arrow" src="assets/img/arrow-down.svg"/>
           </a>
           <span className={'michel-descript'}>Michelangelo (not me)</span>
         </div>
-        <section className="techStack" id={'t'}>
-          <TechStackSection className={'tech-section'}/>
+        <div id={'arrow'}></div>
+        <section className="techStack" id={'t'} ref={tech}>
+          <TechStackSection className={'tech-section'} id={'tech'}/>
         </section>
-        <section className="about" id={'about'}>
+        <section className="about" id={'about'} ref={about}>
           <About className={'about-section'}/>
         </section>
-        <section className={'cool-stuff'} id={'stuff'}>
-          <h3 id={'aniH3'}>I'm always</h3>
-          <h3 id={'aniH3'}>interested</h3>
+        <section className={'cool-stuff'} id={'stuff'} ref={stuff}>
+          <h3 id={'aniH1'}>I'm always</h3>
+          <h3 id={'aniH2'}>interested</h3>
           <h3 id={'aniH3'}>about cool</h3>
-          <h3 id={'aniH3'}>stuff.</h3>
-          <h3 id={'aniH3'}>Are you</h3>
-          <h3 id={'aniH3'}>minding a</h3>
-          <h3 id={'aniH3'}>project?</h3>
+          <h3 id={'aniH4'}>stuff.</h3>
+          <h3 id={'aniH5'}>Are you</h3>
+          <h3 id={'aniH6'}>minding a</h3>
+          <h3 id={'aniH7'}>project?</h3>
         </section>
         <section className="contact" id={'contact'}>
           <div className={'contact-des'}>

@@ -4,12 +4,13 @@ import './About.css';
 
 export interface AboutProps {
   className?: string;
+  id?: string;
 }
 
 export class About extends React.Component<AboutProps> {
   render(): JSX.Element {
     return (
-      <div className={this.props.className}>
+      <div className={this.props.className} id={this.props.id}>
         <h3>About me</h3>
         <div className={'about-content'}>
           <p>Computer Science student with a passion for building cool stuff.

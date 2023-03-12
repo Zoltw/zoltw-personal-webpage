@@ -55,6 +55,10 @@ body::-webkit-scrollbar{
    /* scroll-snap-align: start; */
 }
 
+.parent-hi {
+  overflow: hidden;
+}
+
 .Description {
   display: flex;
   flex-direction: column;
@@ -197,6 +201,17 @@ p {
   bottom: 15%;
 }
 
+h3 > div {
+  position: relative;
+  margin: 0;
+}
+.split-parent {
+  overflow: hidden;
+}
+.split-child {
+  display: inline-block;
+}
+
 h3 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -235,7 +250,7 @@ h3 {
 
 @media screen and (max-width: 920px) {
   .techStack {
-    height: 200vh;
+    /* height: 200vh; */
   }
   .cool-stuff, .about {
     font-size: calc(70px + 2vmin);
@@ -325,7 +340,7 @@ h3 {
   }
 
   .techStack {
-    padding-top: 12rem;
+    padding-top: 6rem;
   }
 }
 
@@ -335,7 +350,7 @@ h3 {
   }  
 
   .techStack {
-    padding-top: 16rem;
+    /* padding-top: 16rem; */
   }
 
   p {
