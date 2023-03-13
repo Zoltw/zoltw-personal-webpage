@@ -19,7 +19,7 @@ export default class BottomBar extends React.Component<BottomBarProps> {
         <nav className={'BottomBarContent'}>
           <div className={'title-down'}>
             <div className={'title-container'}>
-              <a className={'menuAnimation'} href="mailto:filip@zoltw.com?">filip@zoltw.com</a>
+              <a className={'menuAnimation'} href="mailto:filip.zolyniak@zoltw.com?">filip.zolyniak@zoltw.com</a>
             </div>
           </div>
           <div className={'menu'}>

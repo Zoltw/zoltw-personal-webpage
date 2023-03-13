@@ -255,7 +255,7 @@ export default function App(): JSX.Element {
                 className={'textElement'}
               />
               <div className={'captcha'}>
-                <ReCAPTCHA sitekey="key" onClick={onChange}/>
+                <ReCAPTCHA sitekey="key" onChange={onChange}/>
                 <Button isActive={isFormValid} text={'send'} />
               </div>
             </form>

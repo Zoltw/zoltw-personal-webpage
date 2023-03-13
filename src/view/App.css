@@ -350,8 +350,13 @@ h3 {
   }  
 
   .techStack {
-    /* padding-top: 16rem; */
+    padding-top: 12rem;
   }
+
+  .about {
+    margin-top: 20rem;
+  }
+
 
   p {
     width: 22rem;
