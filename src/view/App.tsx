@@ -84,14 +84,14 @@ export default function App(): JSX.Element {
       ease: 'power1.out',
     });
     gsap.fromTo(canvasRef.current, {
-      xPercent: 150,
+      // xPercent: 150,
       autoAlpha: 0,
     }, {
       delay: 0.5,
       autoAlpha: 1,
       duration: 1,
       stagger: .2,
-      xPercent: 0,
+      // xPercent: 0,
       ease: 'power2',
     });
   }, []);
@@ -255,7 +255,7 @@ export default function App(): JSX.Element {
                 className={'textElement'}
               />
               <div className={'captcha'}>
-                <ReCAPTCHA sitekey="key" onChange={onChange}/>
+                <ReCAPTCHA sitekey="6LeYAO8kAAAAACf1FzZcVumSrUQPvgniHkhp1VF_" onChange={onChange}/>
                 <Button isActive={isFormValid} text={'send'} />
               </div>
             </form>
