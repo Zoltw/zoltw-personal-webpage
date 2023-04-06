@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useReducer, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
@@ -20,27 +20,53 @@ import emailjs from '@emailjs/browser';
 import Sidebar from '@components/Navbars/SideBar/SideBar';
 
 
+const initialState = {
+  titleValid: false,
+  messageValid: false,
+  emailValid: false,
+  captchaValid: false,
+  isFormValid: false,
+  isSideBarVisible: false,
+};
+
+const reducer = (state: any, action: { type: any; payload: any; }) => {
+  switch (action.type) {
+    case 'SET_TITLE_VALID':
+      return { ...state, titleValid: action.payload };
+    case 'SET_MESSAGE_VALID':
+      return { ...state, messageValid: action.payload };
+    case 'SET_EMAIL_VALID':
+      return { ...state, emailValid: action.payload };
+    case 'SET_CAPTCHA_VALID':
+      return { ...state, captchaValid: action.payload };
+    case 'SET_FORM_VALID':
+      return { ...state, isFormValid: action.payload };
+    case 'SET_SIDEBAR_VISIBLE':
+      return { ...state, isSideBarVisible: action.payload };
+    default:
+      throw new Error('Invalid action type');
+  }
+};
+
+
 export default function App(): JSX.Element {
   gsap.registerPlugin(ScrollTrigger);
-  const [titleValid, setTitleValid] = useState(false);
-  const [messageValid, setMessageValid] = useState(false);
-  const [emailValid, setEmailValid] = useState(false);
-  const [captchaValid, setCaptchaValid] = useState(false);
-  const [isFormValid, setIsFormValid] = useState(false);
-  const [isSideBarVisible, setSideBarVisible] = useState(false);
-  const title = useRef(null);
-  const email = useRef(null);
-  const message = useRef(null);
-  const refForm = useRef(null!);
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const title = useRef<HTMLInputElement>(null);
+  const email = useRef<HTMLInputElement>(null);
+  const message = useRef<HTMLInputElement>(null);
+  const refForm = useRef<HTMLFormElement>(null!);
   const textRef = useRef<HTMLSpanElement>(null);
   const headerRef = useRef<HTMLHeadElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const tech = useRef<HTMLDivElement>(null);
   const about = useRef<HTMLDivElement>(null);
   const stuff = useRef<HTMLDivElement>(null);
-  const word = useRef<HTMLTitleElement>(null);
+
   const onChange = () => {
-    setCaptchaValid(true);
+    dispatch({ type: 'SET_CAPTCHA_VALID', payload: true });
   };
 
   const sendEmail = (e: { preventDefault: () => void; }) => {
@@ -159,13 +185,17 @@ export default function App(): JSX.Element {
 
 
   useEffect(() => {
-    setIsFormValid(emailValid && titleValid && messageValid && captchaValid);
+    dispatch({
+      type: 'SET_FORM_VALID',
+      payload: state.emailValid && state.titleValid && state.messageValid && state.captchaValid,
+    });
   }, [
-    emailValid,
-    titleValid,
-    messageValid,
-    captchaValid,
+    state.emailValid,
+    state.titleValid,
+    state.messageValid,
+    state.captchaValid,
   ]);
+
 
   return (
     <>
@@ -175,7 +205,7 @@ export default function App(): JSX.Element {
         <header id="header" ref={headerRef}>
           <UpperBar className={'UpperBar'}/>
         </header>
-        <Sidebar visible={isSideBarVisible}/>
+        <Sidebar visible={state.isSideBarVisible}/>
         {/* Main content*/}
         <div className="MainPage" id={'home'}>
           <Canvas id="three-canvas-container" ref={canvasRef} shadows>
@@ -230,7 +260,7 @@ export default function App(): JSX.Element {
             <form className={'form'} ref={refForm} onSubmit={sendEmail}>
               <Input
                 useRef={email}
-                correctValue={setEmailValid}
+                correctValue={(value) => dispatch({ type: 'SET_EMAIL_VALID', payload: value })}
                 type={'email'}
                 name={'email'}
                 placeholder={'Your email'}
@@ -239,7 +269,7 @@ export default function App(): JSX.Element {
               />
               <Input
                 useRef={title}
-                correctValue={setTitleValid}
+                correctValue={(value) => dispatch({ type: 'SET_TITLE_VALID', payload: value })}
                 type={'text'}
                 name={'title'}
                 placeholder={'Title'}
@@ -248,7 +278,7 @@ export default function App(): JSX.Element {
               />
               <Textarea
                 useRef={message}
-                correctValue={setMessageValid}
+                correctValue={(value) => dispatch({ type: 'SET_MESSAGE_VALID', payload: value })}
                 name={'textSupp'}
                 placeholder={'Your message...'}
                 required
@@ -256,7 +286,7 @@ export default function App(): JSX.Element {
               />
               <div className={'captcha'}>
                 <ReCAPTCHA sitekey="6LeYAO8kAAAAACf1FzZcVumSrUQPvgniHkhp1VF_" onChange={onChange}/>
-                <Button isActive={isFormValid} text={'send'} />
+                <Button isActive={state.isFormValid} text={'send'} />
               </div>
             </form>
           </ContainerBox>
