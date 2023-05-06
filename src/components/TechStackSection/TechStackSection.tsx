@@ -47,7 +47,7 @@ export class TechStackSection extends React.Component<TechStackSectionProps> {
           <TechStackBox src={'assets/img/techStack/tailwind-css.svg'} text={'tailwindCSS'}/>
           <TechStackBox src={'assets/img/techStack/next-js.svg'} text={'next.js'}/>
           <TechStackBox src={'assets/img/techStack/tensorflow.svg'} text={'tensorflow'}/>
-          <TechStackBox src={'assets/img/techStack/golang.svg'} text={'go'}/>
+          <TechStackBox src={'assets/img/techStack/react-native.svg'} text={'react native'}/>
         </ul>
       </div>
     );

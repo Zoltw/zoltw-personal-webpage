@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  server:
+    build: .
+    image: zoltw-webpage:1.0.2
+    ports:
+      - "4000:4000"
