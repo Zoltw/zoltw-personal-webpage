@@ -1,5 +1,6 @@
- <h1 align="center">my personal page</h1>
- <br/>
+<div align="center">
+   <img src="public/assets/img/favicon192.png"/>
+</div>
 
  ## Setting up production environment
 
@@ -14,8 +15,9 @@
  ```bash
  git clone https://github.com/Zoltw/zoltw-personal-webpage.git
  ```
- 3. Open docker and run the following command in the root directory of the project
+ 3. Open docker 
+ 4. Run the following command in the root directory of the project
  ```bash
-    docker-compose up
+ docker-compose up
  ```
  5. Open `http://localhost:4000` in your browser
