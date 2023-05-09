@@ -5,7 +5,7 @@ import Model from './Model';
 import { Vector3 } from 'three';
 
 
-export default function MichelAngelos(): JSX.Element {
+const MichelAngelos = (): JSX.Element => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const animationRef = useRef<THREE.Mesh>(null!);
   useFrame((state, delta) => (animationRef.current.rotation.y += 0.005));
@@ -40,6 +40,6 @@ export default function MichelAngelos(): JSX.Element {
       <pointLight args={['#fff', 0.5]} position={[0, 0, 1]} />
     </>
   );
-}
+};
 
-const angleToRadians = (angleInDeg: number) => (Math.PI / 180) * angleInDeg;
+export default MichelAngelos;

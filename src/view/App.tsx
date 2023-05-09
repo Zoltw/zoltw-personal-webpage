@@ -1,6 +1,6 @@
 import React, { useReducer, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import ReCAPTCHA from 'react-google-recaptcha';
 import gsap from 'gsap';
@@ -10,12 +10,12 @@ import './App.css';
 import UpperBar from '@components/Navbars/Upperbar/UpperBar';
 import BottomBar from '@components/Navbars/Bottombar/BottomBar';
 import MichelAngelos from '@components/MichelAngelos/MichelAngelos';
-import { TechStackSection } from '@components/TechStackSection/TechStackSection';
+import TechStackSection from '@components/TechStackSection/TechStackSection';
 import ContainerBox from '@components/ContainerBox/ContainerBox';
 import Input from '@components/Input/Input';
 import Textarea from '@components/TextArea/TextArea';
 import Button from '@components/Button/Button';
-import { About } from '@components/About/About';
+import About from '@components/About/About';
 import emailjs from '@emailjs/browser';
 import Sidebar from '@components/Navbars/SideBar/SideBar';
 
@@ -49,7 +49,7 @@ const reducer = (state: any, action: { type: any; payload: any; }) => {
 };
 
 
-export default function App(): JSX.Element {
+const App = (): JSX.Element => {
   gsap.registerPlugin(ScrollTrigger);
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -297,4 +297,6 @@ export default function App(): JSX.Element {
       </div>
     </>
   );
-}
+};
+
+export default App;

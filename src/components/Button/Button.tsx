@@ -1,9 +1,7 @@
-import { Component } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import './Button.css';
 
-
-export interface ButtonProps {
+interface ButtonProps {
   text: string;
   typeof?: string;
   width?: string;
@@ -13,50 +11,39 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
-export interface ButtonState {
-  isAwaiting: boolean;
-}
+const ButtonForm: React.FC<ButtonProps> = ({ text, typeof: typeOf, width, onClick, isActive, className, type }) => {
+  const [isAwaiting, setIsAwaiting] = useState(false);
 
-export default class ButtonForm extends Component<ButtonProps, ButtonState> {
-  constructor(props: ButtonProps) {
-    super(props);
+  const buttonClasses = joinClasses(
+    className ?? '',
+    isActive ? '' : 'disabled',
+    type ? '' : 'button',
+  );
 
-    this.state = {
-      isAwaiting: false,
-    };
-  }
+  const clickHandler = async () => {
+    if (!isActive || isAwaiting) return;
+    setIsAwaiting(true);
 
-  render(): JSX.Element {
-    return (
-      <button
-        className={this.buttonClasses}
-        typeof={this.props.typeof}
-        style={{ width: this.props.width }}
-        onClick={this.clickHandler}
-        type={this.props.type}
-      >
-        {this.props.text}
-      </button>
-    );
-  }
-  private get buttonClasses(): string {
-    return this.joinClasses(
-      this.props.className ?? '',
-      this.props.isActive ? '' : 'disabled',
-      this.props.type ? '' : 'button',
-    );
-  }
+    await onClick?.();
 
-  private clickHandler = async () => {
-    if (!this.props.isActive || this.state.isAwaiting) return;
-    this.setState({ isAwaiting: true });
-
-    await this.props.onClick?.();
-
-    this.setState({ isAwaiting: false });
+    setIsAwaiting(false);
   };
 
-  private joinClasses(...classes: string[]) {
+  function joinClasses(...classes: string[]) {
     return classes.join(' ');
   }
-}
+
+  return (
+    <button
+      className={buttonClasses}
+      typeof={typeOf}
+      style={{ width }}
+      onClick={clickHandler}
+      type={type}
+    >
+      {text}
+    </button>
+  );
+};
+
+export default ButtonForm;

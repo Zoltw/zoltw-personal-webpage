@@ -2,7 +2,7 @@ import React from 'react';
 import './Loading.css';
 
 
-export default function Loading(): JSX.Element {
+const Loading = (): JSX.Element => {
   return (
     <div className="Loading">
       <div className="HideImg">
@@ -10,4 +10,6 @@ export default function Loading(): JSX.Element {
       </div>
     </div>
   );
-}
+};
+
+export default Loading;

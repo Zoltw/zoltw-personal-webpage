@@ -13,7 +13,7 @@ type GLTFResult = GLTF & {
   }
 };
 
-export default function Model(props: JSX.IntrinsicElements['group']): JSX.Element {
+const Model = (props: JSX.IntrinsicElements['group']): JSX.Element => {
   const { nodes, materials } = useGLTF('assets/models/michel_angelos.glb') as GLTFResult;
   return (
     <group {...props} dispose={null}>
@@ -27,6 +27,8 @@ export default function Model(props: JSX.IntrinsicElements['group']): JSX.Elemen
       </group>
     </group>
   );
-}
+};
 
 useGLTF.preload('assets/models/michel_angelos.glb');
+
+export default Model;
