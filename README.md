@@ -1,3 +1,5 @@
+## Deprecated
+
 <div align="center">
    <img src="public/assets/img/favicon192.png"/>
 </div>
